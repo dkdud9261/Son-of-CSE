@@ -12,4 +12,4 @@
 /captures
 .externalNativeBuild
 .cxx
-keys.xml
+/app/src/main/res/values/keys.xml
