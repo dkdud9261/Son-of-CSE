@@ -7,8 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <%= users[users.length-1].latitude %>
-    <%= users[users.length-1].longitude %>
     <%= users[users.length-1].id %>
+    <%= users[users.length-1].nickname %>
+    <%= users[users.length-1].like%>
+    <div style="background-image: url('<%= users.image %>'); width: 200px; height: 200px;"></div>
 </body>
 </html>
