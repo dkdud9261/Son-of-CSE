@@ -22,12 +22,27 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(fileUpload());
 
+app.use(express.static(__dirname + '/public/stylesheets'));
+
 app.get('/', (req, res) => {
 	res.render('chat');
 });
 
 app.get('/map', (req, res)=> {
 	res.render('map');
+});
+
+app.get('/comitFind', (req, res)=> {
+	res.render('comitFind');
+});
+app.get('/comitMyProfile', (req, res)=> {
+	res.render('comitMyProfile');
+});
+app.get('/comitProfile', (req, res)=> {
+	res.render('comitProfile');
+});
+app.get('/comitTalk', (req, res)=> {
+	res.render('comitTalk');
 });
 
 app.get('/monitor', async (req, res) => {
