@@ -9,8 +9,9 @@ var path = require('path');
 var fileUpload = require('express-fileupload');
 const mongoose = require('mongoose');
 const User = require('./models/User');
+const DBurl = require('./public/assets/keys');
 
-mongoose.connect('mongodb+srv://COMit:computer1@cluster0.qqdk3.mongodb.net/test', {useUnifiedTopology: true, useNewUrlParser:true});
+mongoose.connect(DBurl, {useUnifiedTopology: true, useNewUrlParser:true});
 
 app.set('views', './views');
 app.set('view engine', 'ejs');
