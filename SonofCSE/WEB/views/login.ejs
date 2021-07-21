@@ -77,27 +77,24 @@
               ({
                 url: '/v2/user/me',
                 success: function (response) {
-                  console.log(response.properties['nickname']);
-                  console.log(response.properties['profile_image']);
                   console.log(response);
 
                   const nickname = response.properties['nickname'];
                   const image = response.properties['profile_image'];
                   const obj = { nickname: nickname, image: image };
                   console.log(obj);
-
-                  // const User = require('../models/User.js')
-                  // const path = require('path')
-
-                  // module.exports = (req, res) => {
-                  //   await BlogPost.create({
-                  //     ...req.body,
-                  //     nickname: nickname,
-                  //     image: image
-                  //   })
-                  //   res.redirect('/');
-                  // }
                 }
+                const User = require('../models/User.js')
+                  const path = require('path')
+
+                  module.exports = (req, res) => {
+                    await BlogPost.create({
+                      ...req.body,
+                      nickname: nickname,
+                      image: image
+                    })
+                    res.redirect('/');
+                  }
               })
           },
           fail: function (err) {

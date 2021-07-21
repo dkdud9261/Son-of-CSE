@@ -30,8 +30,8 @@ app.get('/map', (req, res)=> {
 	res.render('map');
 });
 
-app.get("/login", async function (req, res) {
-	res.render("login")
+app.get('/login', (req, res)=> {
+	res.render('login')
   })
 
 app.get('/monitor', async (req, res) => {
@@ -47,8 +47,6 @@ app.post('/posts/store', async (req, res) => {
 	await User.create(req.body);
 	res.redirect('/monitor');
 });
-
-// app.post('/views/login', User); //add
 
 var count=1; 
 // 채팅방에 접속했을 때 - 1
