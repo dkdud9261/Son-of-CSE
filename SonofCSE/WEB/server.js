@@ -30,9 +30,9 @@ app.get('/map', (req, res)=> {
 	res.render('map');
 });
 
-app.get("/login", (req, res)=> {
+app.get("/login", async function (req, res) {
 	res.render("login")
-});
+  })
 
 app.get('/monitor', async (req, res) => {
 	const users = await User.find({});
