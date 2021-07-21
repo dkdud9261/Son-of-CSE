@@ -15,6 +15,10 @@ app.get('/', (req, res) => {
 	res.render('chat');
 });
 
+app.get("/login", async function (req, res) {
+	res.render("login")
+  })
+
 var count=1; 
 // 채팅방에 접속했을 때 - 1
 io.on('connection', function(socket){
