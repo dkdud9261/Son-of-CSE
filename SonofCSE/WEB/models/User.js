@@ -2,11 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-    latitude: Number,
-    longitude: Number,
-    id: String
+    id: String,
+    nickname: String,
+    like: String,
+    image: String
 });
 
-const User = mongoose.model('User', UserSchema);
+const User = mongoose.model('Users', UserSchema);
 
 module.exports = User;

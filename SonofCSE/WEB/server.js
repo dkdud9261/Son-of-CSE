@@ -1,12 +1,16 @@
 // server.js
 
 var express = require('express');
-var app = express();
+var app = new express();
+
 var http = require('http').Server(app); 
 var io = require('socket.io')(http);    
 var path = require('path');
+var fileUpload = require('express-fileupload');
 const mongoose = require('mongoose');
 const User = require('./models/User');
+
+
 
 mongoose.connect('mongodb://localhost/Com_it', {useNewUrlParser:true});
 
@@ -16,9 +20,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+app.use(fileUpload());
 
 app.get('/', (req, res) => {
-	// 루트 페이지로 접속시 chat.pug 렌더링
 	res.render('chat');
 });
 
@@ -34,10 +38,11 @@ app.get('/monitor', async (req, res) => {
 	console.log("users.length : " + users.length);
 });
 
+
 app.post('/posts/store', async (req, res) => {
 	await User.create(req.body);
 	res.redirect('/monitor');
-})
+});
 
 var count=1; 
 // 채팅방에 접속했을 때 - 1
@@ -62,6 +67,6 @@ io.on('connection', function(socket){
 	
 });
 
-http.listen(3000, function(){ 
+http.listen(4000, function(){ 
 	console.log('server on..');
 });
