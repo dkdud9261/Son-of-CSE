@@ -65,25 +65,18 @@
     <div class="wrap">
       <a id="kakao-login-btn"></a>
     </div>
-    <a href="http://developers.kakao.com/login"></a>
+    <a href="http://developers.kakao.com/login" onclick=""></a>
     <script type='text/javascript'>
       Kakao.init('e1312a8c9d7419235dbd507b6ed66499');
       Kakao.Auth.createLoginButton({
         container: '#kakao-login-btn',
-        url: '/v2/user/me',
         success: function (authObj) {
           console.log("success!");
           Kakao.API.request({
             url: '/v2/user/me',
             success: function (response) {
-              // console.log(response.properties['nickname']);
-              // console.log(response.properties['profile_image'])
-              // console.log(response);
-              // const id = response.properties['id'];
-              const nickname = response.properties['nickname'];
-              const image = response.properties['profile_image'];
-              const obj = { nickname: nickname, image: image };
-              console.log(obj);
+              console.log(response.properties['nickname']);
+              console.log(response);
             }
           })
         },
