@@ -50,7 +50,7 @@
 
     #title {
       font-size: xx-large;
-      padding-top: 20%;
+      padding-top: 15%;
       text-align: center;
       color: white;
     }
@@ -65,22 +65,33 @@
     <div class="wrap">
       <a id="kakao-login-btn"></a>
     </div>
-    <a href="http://developers.kakao.com/login" onclick=""></a>
+    <a href="http://developers.kakao.com/login" ></a>
     <script type='text/javascript'>
       Kakao.init('e1312a8c9d7419235dbd507b6ed66499');
-      Kakao.Auth.createLoginButton({
+      Kakao.Auth.createLoginButton
+      ({
         container: '#kakao-login-btn',
-        success: function (authObj) {
+        success: function (authObj) 
+        {
           console.log("success!");
-          Kakao.API.request({
+          Kakao.API.request
+          ({
             url: '/v2/user/me',
-            success: function (response) {
+            success: function (response) 
+            {
               console.log(response.properties['nickname']);
+              console.log(response.properties['profile_image']);
               console.log(response);
+
+              const nickname = response.properties['nickname'];
+              const image = response.properties['profile_image'];
+              const obj = {nickname:nickname, image:image};
+              console.log(obj);
             }
           })
         },
-        fail: function (err) {
+        fail: function (err) 
+        {
           alert(JSON.stringify(err));
         }
       });
