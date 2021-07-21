@@ -43,13 +43,14 @@
     }
 
     #kakao-login-btn {
-      margin-bottom: 30%;
+      margin-bottom: 0;
+      margin-top: -30%;
       position: inherit;
     }
 
     #title {
       font-size: xx-large;
-      padding-top: 5%;
+      padding-top: 20%;
       text-align: center;
       color: white;
     }
@@ -59,7 +60,7 @@
 <body>
   <section id="bg">
     <div>
-      <h2 id="title">Com it ! </br> 컴퓨터학부를 잇다</h2>
+      <h2 id="title">COM it ! </br> 컴퓨터학부를 잇다</h2>
     </div>
     <div class="wrap">
       <a id="kakao-login-btn"></a>
@@ -75,6 +76,7 @@
             url: '/v2/user/me',
             success: function (response) {
               console.log(response.properties['nickname']);
+              console.log(response.properties['profile_image'])
               console.log(response);
             }
           })
@@ -92,12 +94,9 @@
 
       document.onclick = function (e) {
         mouseX = Math.round(e.pageX / windowWidth * 100 - delay);
-
         col1 = mouseX - blendAmount;
         col2 = mouseX + blendAmount;
-
         bg.style.background = "linear-gradient(to right, #ffc3a0 " + col1 + "%, #ffafbd " + col2 + "%)";
-
       }
     </script>
   </section>
