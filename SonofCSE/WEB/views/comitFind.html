@@ -1,0 +1,148 @@
+﻿<html>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD44CjIy1fb2L2Q94GDGJIUEHdO6OEgtTY"></script>
+  <head>
+    <meta charset="utf-8" />
+    <title>mainPage</title>
+    <link rel="stylesheet" href="sonFind.css" />
+  </head>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript">
+    var nav = null;
+    var map;
+    var marker = new Object;
+    /* 현재 위치(위도/경도)를 받아오기 위한 부분 */
+    $(function() {
+      if (nav == null) {
+        nav = window.navigator;
+      }
+      if (nav != null) {
+        var geoloc = nav.geolocation;
+        if (geoloc != null) {
+          /* Callback 성공 시, successCallback() 호출 */
+          geoloc.getCurrentPosition(successCallback);
+        } else {
+          alert("geolocation not supported");
+        }
+      } else {
+        alert("Navigator not found");
+      }
+    });
+    
+    function successCallback(position) {
+      /* 위도 */ var latitude = position.coords.latitude;
+      /* 경도 */ var longitude = position.coords.longitude; 
+      /* Google Map으로 위도와 경도 초기화 */
+      initialize(latitude, longitude);
+    }
+    /*
+    var w = "";
+    var h = "";
+    var img = new Image();
+    img.onload = function(){
+      w = img.clientWidth;
+      h = this.clientHeight;
+    };
+    img.src = "https://github.com/Yoonlang/web-programming/blob/master/html/assets/bell1.png";
+    console.log(w + " " + h);
+    */
+    function initialize(latitude, longitude) {
+      /* 현재 위치의 위도와 경도 정보를 currentLocatioon 에 초기화 */
+      var mapOptions = {
+        center : {lat : latitude, lng : longitude}, /* 지도에 보여질 위치 */ 				
+        zoom : 14, /* 지도 줌 (0축소 ~ 18확대),  */ 	
+        mapTypeId : google.maps.MapTypeId.ROADMAP
+      };
+      /* DIV에 지도 달아주기 */
+      map = new google.maps.Map(document.getElementById("map_canvas"),
+          mapOptions);
+      /* 지도 위에 마커 달아주기 */
+      marker = new google.maps.Marker({
+        position : {lat : latitude, lng : longitude},
+        map : map
+        //icon: image
+      });
+      google.maps.event.addListener(marker, 'click', toggleBounce(marker));
+      marker = new google.maps.Marker({
+        position : {lat: 35.8875136, lng: 128.6145696},
+        map
+      });
+      marker = new google.maps.Marker({
+        position : {lat: 35.8975136, lng: 128.6145696},
+        map
+      });
+      // This event listener will call addMarker() when the map is clicked.
+      /* 지도에서 마우스 클릭시 마커 생성 */
+      /*
+      google.maps.event.addListener(map, 'click', function(event) {
+        addMarker(event.latLng);
+      });
+      */
+    }
+    // Add a marker to the map and push to the array.
+    /*
+     * 이 소스는 마커를 하나만 추가할 수 있도록 구현해놓습니다.
+     * 개발자분들 재량에 따라 코드를 응용하도록 하세요.  
+     */
+    function addMarker(location) {
+      /* 기존에 있던 마커 삭제 후 */
+      /*새 마커 추가하기. */ 
+      //marker.setMap(null);
+      marker = new google.maps.Marker({
+        position : location,
+        map
+      });
+      /* 마커 토글바운스 이벤트 걸어주기(마커가 통통 튀도록 애니메이션을 걸어줌) */
+      google.maps.event.addListener(marker, 'click', toggleBounce(marker));
+    }
+
+    function toggleBounce(marker) {
+      if (marker.getAnimation() != null) {
+        marker.setAnimation(null);
+      } else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+      }
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+  <body>
+    <div class="body_container">
+      <div class="body_header">
+          <div class="upper_header">
+              <div class="left_header">
+                  <span>컴잇</span>
+              </div>
+          </div>
+          <div class="lower_header">
+              <a href="#" target="_self">
+                  <div class="menu" id="new_customer">
+                      <div class="menu_text"><span>친구 찾기</span></div>
+                      <div class="menu_underbar"></div>
+                  </div>
+              </a>
+              <a href="comitProfile.html" target="_self">
+                  <div class="menu" id="ing_customer">
+                      <div class="menu_text"><span>프로필</span></div>
+                      <div class="menu_underbar"></div>
+                  </div>
+              </a>
+              <a href="comitTalk.html" target="_self">
+                  <div class="menu" id="fin_customer">
+                      <div class="menu_text"><span>채팅방</span></div>
+                      <div class="menu_underbar"></div>
+                  </div>
+              </a>
+              <a href="comitMyProfile.html" target="_self">
+                  <div class="menu" id="stop_customer">
+                      <div class="menu_text"><span>내 프로필</span></div>
+                      <div class="menu_underbar"></div>
+                  </div>
+              </a>
+          </div>
+      </div>
+  </div>
+  <div id="map_canvas"></div>
+  </body>
+  <script>
+  </script>
+</html>

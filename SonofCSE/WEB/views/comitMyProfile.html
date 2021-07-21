@@ -1,0 +1,103 @@
+﻿<html>
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <head>
+    <meta charset="utf-8" />
+    <title>profile</title>
+    <link rel="stylesheet" href="sonMyProfile.css" />
+  </head>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <body>
+    <div class="body_container">
+      <div class="body_header">
+          <div class="upper_header">
+              <div class="left_header">
+                  <span>컴잇</span>
+              </div>
+          </div>
+          <div class="lower_header">
+              <a href="comitFind.html" target="_self">
+                  <div class="menu" id="new_customer">
+                      <div class="menu_text"><span>친구 찾기</span></div>
+                      <div class="menu_underbar"></div>
+                  </div>
+              </a>
+              <a href="comitProfile.html" target="_self">
+                  <div class="menu" id="ing_customer">
+                      <div class="menu_text"><span>프로필</span></div>
+                      <div class="menu_underbar"></div>
+                  </div>
+              </a>
+              <a href="comitTalk.html" target="_self">
+                  <div class="menu" id="fin_customer">
+                      <div class="menu_text"><span>채팅방</span></div>
+                      <div class="menu_underbar"></div>
+                  </div>
+              </a>
+              <a href="#" target="_self">
+                  <div class="menu" id="stop_customer">
+                      <div class="menu_text"><span>내 프로필</span></div>
+                      <div class="menu_underbar"></div>
+                  </div>
+              </a>
+          </div>
+      </div>
+      <div class="main_container">
+        <div class="user_container">
+          <div class="user_img_container">
+              <img src="https://github.com/Yoonlang/web-programming/blob/master/html/assets/person.png?raw=true" />
+          </div>
+          <div class="user_name">
+              <span>홍길동</span>
+          </div>
+          <div class="hashtag_container">
+            <span class="hashtag">#애완동물</span>
+            <span class="hashtag">#카페</span>
+            <span class="hashtag">#알고리즘</span>
+            <span class="hashtag">#영화</span>
+            <span class="hashtag">#방탈출</span>
+          </div>
+        </div>
+        <button class="update_btn" onclick="open_modal()">수정하기</button>
+      </div>
+  </div>
+  <div class="modal_container" id="modal_container">
+      <div class="modal_box" id="modal_box">
+          <div class="item_container">
+              <span class="item_span">해시태그 선택</span>
+              <div class="select_item">
+                  <div class="text_area">
+                    <input type="radio" /><span class="upper_text">애완동물</span>
+                    <input type="radio" /><span class="upper_text">카페</span>
+                    <input type="radio" /><span class="upper_text">알고리즘</span>
+                    <input type="radio" /><span class="upper_text">영화</span>
+                    <input type="radio" /><span class="upper_text">방탈출</span>
+                    <input type="radio" /><span class="upper_text">독서</span>
+                    <input type="radio" /><span class="upper_text">운동</span>
+                    <input type="radio" /><span class="upper_text">코딩</span>
+                  </div>
+              </div>
+          </div>
+          <div class="btn_container">
+              <button   onclick="update_data()"><span>수정 완료</span></button>
+          </div>
+          <div class="modal_cancel"   onclick="close_modal()">
+              <img src="https://github.com/Yoonlang/web-programming/blob/master/html/assets/cancel.png?raw=true" />
+          </div>
+      </div>
+  </div>
+  </body>
+  <script>
+    const open_modal = () => {
+        var modal = document.getElementById("modal_container");
+        modal.style.display = "flex"
+    }
+    const close_modal = () => {
+        var modal = document.getElementById("modal_container");
+        modal.style.display = "none"
+    }
+    const update_data = () => {
+        var before_modal = document.getElementById("modal_container");
+        before_modal.style.display = "none";
+    }
+  </script>
+</html>
