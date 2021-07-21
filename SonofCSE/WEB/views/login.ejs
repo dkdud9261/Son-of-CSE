@@ -7,7 +7,7 @@
   <meta name="viewport"
     content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
   <title>LoginK</title>
-  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>​
+  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
   <style>
     @font-face {
       font-family: 'NanumBarunGothic';
@@ -43,13 +43,14 @@
     }
 
     #kakao-login-btn {
-      margin-bottom: 30%;
+      margin-bottom: 0;
+      margin-top: -30%;
       position: inherit;
     }
 
     #title {
       font-size: xx-large;
-      padding-top: 5%;
+      padding-top: 15%;
       text-align: center;
       color: white;
     }
@@ -59,26 +60,38 @@
 <body>
   <section id="bg">
     <div>
-      <h2 id="title">Com it ! </br> 컴퓨터학부를 잇다</h2>
+      <h2 id="title">COM it ! </br> 컴퓨터학부를 잇다</h2>
     </div>
     <div class="wrap">
       <a id="kakao-login-btn"></a>
     </div>
-    <a href="http://developers.kakao.com/login" onclick=""></a>
+    <a href="http://developers.kakao.com/login" ></a>
     <script type='text/javascript'>
       Kakao.init('e1312a8c9d7419235dbd507b6ed66499');
-      Kakao.Auth.createLoginButton({
+      Kakao.Auth.createLoginButton
+      ({
         container: '#kakao-login-btn',
-        success: function (authObj) {
+        success: function (authObj) 
+        {
           console.log("success!");
-          Kakao.API.request({
+          Kakao.API.request
+          ({
             url: '/v2/user/me',
-            success: function (response) {
+            success: function (response) 
+            {
+              console.log(response.properties['nickname']);
+              console.log(response.properties['profile_image']);
               console.log(response);
+
+              const nickname = response.properties['nickname'];
+              const image = response.properties['profile_image'];
+              const obj = {nickname:nickname, image:image};
+              console.log(obj);
             }
           })
         },
-        fail: function (err) {
+        fail: function (err) 
+        {
           alert(JSON.stringify(err));
         }
       });
@@ -88,15 +101,12 @@
       var delay = -10;
       var windowWidth = window.innerWidth;
       var bg = document.getElementById("bg");
-  
-      document.onmousemove = function (e) {
+
+      document.onclick = function (e) {
         mouseX = Math.round(e.pageX / windowWidth * 100 - delay);
-  
         col1 = mouseX - blendAmount;
         col2 = mouseX + blendAmount;
-  
         bg.style.background = "linear-gradient(to right, #ffc3a0 " + col1 + "%, #ffafbd " + col2 + "%)";
-  
       }
     </script>
   </section>
