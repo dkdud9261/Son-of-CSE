@@ -194,6 +194,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
 }
 .modal_container .modal_box {
   display: block;
@@ -222,49 +223,32 @@
   background-color: #f7f7f7;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   margin: 15px 0px 25px 0px;
-  padding: 10px 0px;
+  padding: 15px 15px;
 }
-.modal_container .modal_box .item_container .select_item .text_area {
+.modal_container .modal_box .item_container .select_item .input_container {
   display: flex;
   position: relative;
   align-items: center;
-  padding-left: 10px;
-  width: 100%;
-  height: calc(100% / 3);
-  overflow: hidden;
+  width: calc(100% / 3);
+  height: 30px;
 }
 .modal_container
   .modal_box
   .item_container
   .select_item
-  .text_area
+  .input_container
+  input {
+  margin-right: 10px;
+}
+.modal_container
+  .modal_box
+  .item_container
+  .select_item
+  .input_container
   .upper_text {
   font-size: 15px;
   font-weight: 600;
   color: #000;
-}
-.modal_container .modal_box .item_container .select_item .text_area .mid_text {
-  font-size: 15px;
-  color: gray;
-}
-.modal_container
-  .modal_box
-  .item_container
-  .select_item
-  .text_area
-  .mid_date_text {
-  font-size: 16px;
-  color: gray;
-}
-.modal_container
-  .modal_box
-  .item_container
-  .select_item
-  .text_area
-  .lower_text {
-  font-size: 15px;
-  font-weight: 600;
-  color: #4a79f4;
 }
 .modal_container .modal_box .btn_container {
   display: flex;
