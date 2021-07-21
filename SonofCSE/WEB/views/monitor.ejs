@@ -5,11 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="//code.jquery.com/jquery-1.11.1.js"></script>
 </head>
 <body>
-    <%= users[users.length-1].id %>
+    <p id="id"><%= users[users.length-1].id %></p>
     <%= users[users.length-1].nickname %>
     <%= users[users.length-1].like%>
+    <script>
+        console.log($("#id").text());
+
+    </script>
     <div style="background-image: url('<%= users.image %>'); width: 200px; height: 200px;"></div>
 </body>
 </html>

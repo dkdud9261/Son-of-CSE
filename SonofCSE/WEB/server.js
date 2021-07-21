@@ -22,8 +22,6 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(fileUpload());
 
-
-
 app.get('/', (req, res) => {
 	res.render('chat');
 });
@@ -40,23 +38,10 @@ app.get('/monitor', async (req, res) => {
 	console.log("users.length : " + users.length);
 });
 
-app.post('/posts/store', (req, res) => {
-	if(!req.files) {
-		console.log('no file uploaded');
-	}
-	else {
-	let image = req.files.image;
-	
-	image.mv(path.resolve(__dirname, '..','public/images', image.name), async(error) => {
-		await User.create({
-			...req.body,
-			image: '/images/' + image.name
-		});
-		res.redirect('/monitor');
-	});
-}
-	// await User.create(req.body);
-	// res.redirect('/monitor');
+
+app.post('/posts/store', async (req, res) => {
+	await User.create(req.body);
+	res.redirect('/monitor');
 });
 
 var count=1; 
