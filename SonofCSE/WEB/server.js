@@ -8,7 +8,7 @@ var io = require('socket.io')(http);
 var path = require('path');
 var fileUpload = require('express-fileupload');
 const mongoose = require('mongoose');
-const User = require('./models/User');
+const User = require('./models/User'); //controller
 
 
 
@@ -30,6 +30,10 @@ app.get('/map', (req, res)=> {
 	res.render('map');
 });
 
+app.get("/login", (req, res)=> {
+	res.render("login")
+});
+
 app.get('/monitor', async (req, res) => {
 	const users = await User.find({});
 	res.render('monitor', {
@@ -43,6 +47,8 @@ app.post('/posts/store', async (req, res) => {
 	await User.create(req.body);
 	res.redirect('/monitor');
 });
+
+// app.post('/views/login', User); //add
 
 var count=1; 
 // 채팅방에 접속했을 때 - 1

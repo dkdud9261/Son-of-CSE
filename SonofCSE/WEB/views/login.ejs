@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport"
     content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
-  <title>LoginK</title>
+  <title>Login</title>
   <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
   <style>
     @font-face {
@@ -65,37 +65,48 @@
     <div class="wrap">
       <a id="kakao-login-btn"></a>
     </div>
-    <a href="http://developers.kakao.com/login" ></a>
+    <a href="http://developers.kakao.com/login"></a>
     <script type='text/javascript'>
       Kakao.init('e1312a8c9d7419235dbd507b6ed66499');
       Kakao.Auth.createLoginButton
-      ({
-        container: '#kakao-login-btn',
-        success: function (authObj) 
-        {
-          console.log("success!");
-          Kakao.API.request
-          ({
-            url: '/v2/user/me',
-            success: function (response) 
-            {
-              console.log(response.properties['nickname']);
-              console.log(response.properties['profile_image']);
-              console.log(response);
+        ({
+          container: '#kakao-login-btn',
+          success: function (authObj) {
+            console.log("success!");
+            Kakao.API.request
+              ({
+                url: '/v2/user/me',
+                success: function (response) {
+                  console.log(response.properties['nickname']);
+                  console.log(response.properties['profile_image']);
+                  console.log(response);
 
-              const nickname = response.properties['nickname'];
-              const image = response.properties['profile_image'];
-              const obj = {nickname:nickname, image:image};
-              console.log(obj);
-            }
-          })
-        },
-        fail: function (err) 
-        {
-          alert(JSON.stringify(err));
-        }
-      });
+                  const nickname = response.properties['nickname'];
+                  const image = response.properties['profile_image'];
+                  const obj = { nickname: nickname, image: image };
+                  console.log(obj);
+
+                  // const User = require('../models/User.js')
+                  // const path = require('path')
+
+                  // module.exports = (req, res) => {
+                  //   await BlogPost.create({
+                  //     ...req.body,
+                  //     nickname: nickname,
+                  //     image: image
+                  //   })
+                  //   res.redirect('/');
+                  // }
+                }
+              })
+          },
+          fail: function (err) {
+            alert(JSON.stringify(err));
+          }
+        });
     </script>
+
+    <!-- background -->
     <script>
       var blendAmount = 70;
       var delay = -10;
