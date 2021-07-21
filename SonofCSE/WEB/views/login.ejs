@@ -58,6 +58,7 @@
 </head>
 
 <body>
+
   <section id="bg">
     <div>
       <h2 id="title">COM it ! </br> 컴퓨터학부를 잇다</h2>
@@ -67,7 +68,12 @@
     </div>
     <a href="http://developers.kakao.com/login"></a>
     <script type='text/javascript'>
-      Kakao.init('e1312a8c9d7419235dbd507b6ed66499');
+      var id = null;
+      var nickname = null;
+      var image = null;
+
+      Kakao.init('e1312a8c9d7419235dbd507b6ed66499'); //api
+
       Kakao.Auth.createLoginButton
         ({
           container: '#kakao-login-btn',
@@ -77,30 +83,18 @@
               ({
                 url: '/v2/user/me',
                 success: function (response) {
-                  console.log(response);
-
-                  const nickname = response.properties['nickname'];
-                  const image = response.properties['profile_image'];
-                  const obj = { nickname: nickname, image: image };
-                  console.log(obj);
+                  id = response['id'];
+                  nickname = response.properties['nickname'];
+                  image = response.properties['profile_image'];
+                  console.log(id, nickname, image)
                 }
-                const User = require('../models/User.js')
-                  const path = require('path')
-
-                  module.exports = (req, res) => {
-                    await BlogPost.create({
-                      ...req.body,
-                      nickname: nickname,
-                      image: image
-                    })
-                    res.redirect('/');
-                  }
               })
           },
           fail: function (err) {
             alert(JSON.stringify(err));
           }
         });
+     
     </script>
 
     <!-- background -->

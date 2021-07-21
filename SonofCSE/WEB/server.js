@@ -8,7 +8,11 @@ var io = require('socket.io')(http);
 var path = require('path');
 var fileUpload = require('express-fileupload');
 const mongoose = require('mongoose');
-const User = require('./models/User'); //controller
+const User = require('./models/User');
+
+//add
+const newUserController = require('./controller/newUser')
+const storeUserController = require('./controller/storeUser')
 
 
 
@@ -41,6 +45,10 @@ app.get('/monitor', async (req, res) => {
 	});
 	console.log("users.length : " + users.length);
 });
+
+//add
+app.get('/auth/login', newUserController)
+app.post('/users/register', storeUserController)
 
 
 app.post('/posts/store', async (req, res) => {
