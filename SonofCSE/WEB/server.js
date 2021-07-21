@@ -10,13 +10,7 @@ var fileUpload = require('express-fileupload');
 const mongoose = require('mongoose');
 const User = require('./models/User');
 
-//add
-const newUserController = require('./controller/newUser')
-const storeUserController = require('./controller/storeUser')
-
-
-
-mongoose.connect('mongodb://localhost/Com_it', {useNewUrlParser:true});
+mongoose.connect('mongodb+srv://COMit:computer1@cluster0.qqdk3.mongodb.net/test', {useUnifiedTopology: true, useNewUrlParser:true});
 
 app.set('views', './views');
 app.set('view engine', 'ejs');
@@ -26,17 +20,29 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(fileUpload());
 
+app.use(express.static(__dirname + '/public/stylesheets'));
+
 app.get('/', (req, res) => {
-	res.render('chat');
+	res.redirect('/comitFind');
 });
 
-app.get('/map', (req, res)=> {
+app.get('/test', (req, res)=> {
 	res.render('map');
 });
 
-app.get('/login', (req, res)=> {
-	res.render('login')
-  })
+app.get('/comitFind', async (req, res)=> {
+	const users = await User.find({});
+	res.render('comitFind', {users});
+});
+app.get('/comitMyProfile', (req, res)=> {
+	res.render('comitMyProfile');
+});
+app.get('/comitProfile', (req, res)=> {
+	res.render('comitProfile');
+});
+app.get('/comitTalk', (req, res)=> {
+	res.render('comitTalk');
+});
 
 app.get('/monitor', async (req, res) => {
 	const users = await User.find({});
@@ -45,10 +51,6 @@ app.get('/monitor', async (req, res) => {
 	});
 	console.log("users.length : " + users.length);
 });
-
-//add
-app.get('/auth/login', newUserController)
-app.post('/users/register', storeUserController)
 
 
 app.post('/posts/store', async (req, res) => {
