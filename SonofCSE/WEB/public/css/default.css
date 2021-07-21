@@ -1,0 +1,494 @@
+/**********************  전체  ******************************/
+/* General Demo Style */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot);
+  src: url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+       url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff2) format('woff2'),
+       url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.woff) format('woff'),
+       url(//fonts.gstatic.com/ea/nanumgothic/v5/NanumGothic-Regular.ttf) format('truetype');
+
+}
+
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, sub, sup, var, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure,
+header, hgroup, menu, nav, section, summary, time, mark, audio, video, textarea,button{margin:0;padding:0;border:0;font-size:100%;font-weight:normal;}
+body{width:100%;font-family:'Noto Sans KR', Nanum Gothic, '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;font-size:12px;color:#464646;}
+ul, li{list-style:none;}
+a{margin:0;padding:0;font-size:100%;text-decoration:none;vertical-align:baseline;background:transparent;}
+a, a:link, a:hover, a:active{color:inherit;text-decoration:none;}
+img{vertical-align:middle;}
+input{margin:0;padding:0;box-sizing:content-box;vertical-align:middle;}
+textarea{border:1px solid #ddd;}
+table{border-collapse:collapse;border-spacing:0;}
+
+::placeholder { /* 파이어폭스 51+, 크롬 57+ */
+         color:#999;
+} 
+:-ms-input-placeholder { /* 인터넷 익스플로러 10+ */
+         color:#999;
+}  
+::-webkit-input-placeholder { /*크롬 4-56 */
+        color:#999;
+}  
+:-moz-placeholder { /* 파이어폭스 4-18 */
+        color:#999;
+}  
+::moz-placeholder { /* 파이어폭스 19-50 */
+        color:#999;
+}
+
+input[type=text], input[type=password], select{
+	height:30px;
+	text-indent:5px;
+}
+
+input[type=button], input[type=submit], input[type=reset]{
+	cursor:pointer;
+}
+
+/***************************************************************************************************/
+
+.paging{
+	float:left;
+	width:100%;
+	text-align:center;
+	margin:15px 0;
+}
+
+.paging ul{
+	margin:0 auto;
+}
+
+.paging ul li{
+	display:inline-block;
+	margin-right:2px;
+	width:25px;
+	height:19px;
+	font-size:11px;
+	text-align:center;
+	padding-top:6px;
+	border:1px solid #ddd;
+}
+
+.paging ul li a,.paging ul li a:hover, .paging ul li a:link, .paging ul li a:focus, .paging ul li a:active{
+ color:inherit;
+ display:block;
+ width:100%;
+ height:100%;
+}
+
+.paging ul li:hover, .paging ul li.now_page{
+	background:#133555;
+	color:#fff;
+	font-weight:700;
+	cursor:pointer;
+}
+
+
+.btn_area01{
+	float:left;
+	width:100%;
+	margin:10px 0;
+	text-align:center;
+}
+
+.btn_area02{
+	float:left;
+	width:100%;
+	margin:10px 0;
+}
+
+.btn_area03{
+	float:left;
+	width:110%;
+	text-align:right;
+}
+
+
+.input_gray{
+	background:#eee;
+}
+
+.darkblue_btn{
+	padding:10px 20px;
+	background:#133555;
+	color:#fff;
+	font-weight:700;
+	font-size:14px;
+	border:0;
+}
+
+.darkgray_btn{
+	padding:10px 20px;
+	background:#333;
+	color:#fff;
+	font-weight:700;
+	font-size:14px;
+	border:0;
+}
+
+.darkgray_sbtn{
+	padding:5px 10px;
+	background:#333;
+	color:#fff;
+	font-weight:700;
+	font-size:12px;
+	border:0;
+}
+
+.darkblue_sbtn{
+	padding:5px 10px;
+	background:#133555;
+	color:#fff;
+	font-weight:700;
+	font-size:12px;
+	border:0;
+}
+
+.detail_table{
+	float:left;
+	width:100%;
+	margin-top:20px;
+	border-top:3px solid #133555;
+	border-left:1px solid #ddd;
+}
+
+.detail_table th, .detail_table td{
+	padding:10px 0;
+	border-right:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	font-size:14px;
+}
+
+.detail_table th{
+	background:#efefef;
+	font-weight:700;
+}
+
+.detail_table td{
+	text-align:left;
+	padding-left:10px;
+}
+
+.detail_table td.c_text{
+	padding-left:0;
+	text-align:center;
+}
+
+.detail_table td dl{
+	float:left;
+	width:100%;
+}
+
+.detail_table td dl dt{
+	float:left;
+	width:100%;
+	font-size:16px;
+	font-weight:700;
+}
+
+.detail_table td dl dd{
+	float:left;
+	width:100%;
+	margin-top:10px;
+	font-size:14px;
+}
+
+.default_table{
+	float:left;
+	display:table;
+	width:110%;
+	margin-top:10px;
+	border-top:1px solid #ddd;
+	border-left:1px solid #ddd;
+}
+
+.default_table tr:nth-child(odd){
+	background:#efefef;
+}
+
+.default_table th, .default_table td{
+	border-right:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	padding:5px 0;
+	text-align:center;
+	font-size:14px;
+	color:#333;
+	font-weight:450;
+}
+
+.default_table th{
+	background:#133555;
+	color:#fff;
+	font-weight:700;
+	font-size:14px;
+}
+
+.default_table td{
+	line-height:25px;
+}
+
+.default_table td.t_left{
+	text-align:left;
+	padding-left:10px;
+}
+
+.default_table2{
+	float:left;
+	width:1200px;
+	margin-top:5px;
+	border-top:1px solid #ddd;
+	border-left:1px solid #ddd;
+}
+
+table.default_table2:nth-child(even){
+	background:#efefef;
+}
+
+
+.default_table2 th, .default_table2 td{
+	border-right:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	padding:8px 0;
+	text-align:center;
+	font-size:14px;
+	color:#333;
+	font-weight:500;
+}
+
+.default_table2 th{
+	background:#133555;
+	color:#fff;
+	font-weight:700;
+	font-size:14px;
+}
+
+.default_table2 td.t_left{
+	text-align:left;
+	padding-left:10px;
+}
+
+.default_table2 td.s_title{
+	background:#efefef;
+	font-weight:700;
+}
+
+
+.default_table3{
+	float:left;
+	width:1200px;
+	margin-top:10px;
+	border-top:2px solid #333;
+	border-left:1px solid #ddd;
+}
+
+
+.default_table3 th, .default_table3 td{
+	border-right:1px solid #ddd;
+	border-bottom:1px solid #999;
+	padding:8px 0;
+	text-align:center;
+	font-size:14px;
+	color:#333;
+	font-weight:500;
+	line-height:30px;
+}
+
+.default_table3 th{
+	background:#efefef;
+	color:#000;
+	font-weight:700;
+	font-size:14px;
+}
+
+.default_table3 td{
+	height:20px;
+}
+
+.default_table3 td.t_left{
+	text-align:left;
+	text-indent:10px;
+}
+
+.default_table3 td.s_title{
+	background:#efefef;
+}
+
+
+.default_table4{
+	float:left;
+	width:1200px;
+	margin-top:5px;
+	border-top:1px solid #ddd;
+	border-left:1px solid #ddd;
+}
+
+
+.default_table4 th, .default_table4 td{
+	border-right:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	padding:8px 0;
+	text-align:center;
+	font-size:14px;
+	color:#333;
+	font-weight:500;
+}
+
+.default_table4 th{
+	background:#133555;
+	color:#fff;
+	font-weight:700;
+	font-size:14px;
+}
+
+.default_table4 td.t_left{
+	text-align:left;
+	padding-left:10px;
+}
+
+.default_table4 td.s_title{
+	background:#efefef;
+	font-weight:700;
+}
+
+.default_write_table{
+	float:left;
+	width:100%;
+	border-top:2px solid #333;
+	border-bottom:1px solid #ddd;
+}
+
+.default_write_table th, .default_write_table td{
+	padding:10px 0;
+	border-bottom:1px solid #ddd;
+	border-right:1px solid #ddd;
+	font-size:16px;
+}
+
+.default_write_table th{
+	background:#efefef;
+	font-weight:700;
+}
+
+.default_write_table td{
+	text-align:left;
+	text-indent:5px;
+}
+
+.default_write_table textarea{
+	width:95%;
+	height:500px;
+}
+
+.default_write_table textarea.bigo{
+	height:200px;
+}
+
+.default_view_table{
+	float:left;
+	width:100%;
+	margin-top:10px;
+	border-top:2px solid #333;
+}
+
+.default_view_table th, .default_view_table td{
+	padding:8px 0;
+	border-bottom:1px solid #ddd;
+	text-align:center;
+	font-size:14px;
+}
+
+.default_view_table th{
+	background:#efefef;
+	font-weight:700;
+}
+
+.default_view_table td{
+
+}
+
+
+
+.add_box{
+    float:left;
+    margin-right:5px;
+    padding:5px 10px;
+    background:#efefef;
+    border:1px solid #ddd;
+    border-radius:20px;
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+}
+
+.add_box2{
+    margin-right:5px;
+    padding:5px 10px;
+    background:#fff;
+    border:1px solid #ddd;
+    border-radius:20px;
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+}
+
+.add_box .del_btn, .add_box2 .del_btn{
+    cursor:pointer;
+}
+
+
+.size50{
+	width:50px;
+}
+
+.size80{
+	width:80px;
+}
+
+.size100{
+	width:100px;
+}
+
+.size150{
+	width:150px;
+}
+
+.size200{
+	width:200px;
+}
+
+.size300{
+	width:300px;
+}
+
+.size400{
+	width:400px;
+}
+
+.size500{
+	width:500px;
+}
+
+.size600{
+	width:600px;
+}
+
+.size700{
+	width:700px;
+}
+
+.size98per{
+	width:98%;
+}
+
+.textarea_set1{
+	width:98%;
+	height:70px;
+}
+
+.textarea_set2{
+	width:98%;
+	height:200px;
+}

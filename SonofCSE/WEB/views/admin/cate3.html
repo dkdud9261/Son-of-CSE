@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>:: COMit 관리시스템 ::</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="/public/css/layout_admin.css" />
+    <link rel="stylesheet" type="text/css" href="/public/css/style_admin.css" />
+    </head>
+
+<body>
+    <div id="wrap">
+        <!-- header -->
+        <div id="header">
+            <h1 class="logo">COMit 관리자 페이지</h1>
+        </div>
+
+        <div id="container">
+        
+            <div id="a_side">
+                <h2 class="left_title">카테고리</h2>
+                <div class="gnb_box">
+                    <ul class="gnb">
+                        <li>
+                            <dl>
+                                <dt onclick="location.href='/views/admin/cate1.html';">가입신청 처리</dt>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt onclick="location.href='/views/admin/cate2.html';">회원정보 관리</dt>
+                                <dd onclick="location.href='/microorganism/effect_list.php?cate=0203';">효능·부작용</dd>
+                                <dd onclick="location.href='/microorganism/probiotics_list.php?cate=0201';">원재료(대분류)</dd>
+                                <dd onclick="location.href='/microorganism/microorganism_list.php?cate=0202';">원재료(소분류)</dd>
+                            </dl>
+                        </li>
+                        <li class="over">
+                            <dl>
+                                <dt onclick="location.href='/views/admin/cate3.html';">신고 내역</dt>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn_area01"><input type="button" value="로그아웃" class="darkblue_btn" onclick="location.href='/logout.php';"></div>
+            </div>
+
+            <div id="content">
+                <h3>신고 리스트</h3>
+                <table class="default_table">
+                    <colgroup>
+                        <col width="60">
+                        <col width="80">
+                        <col width="120">
+                        <col width="100">
+                        <col width="120">
+                        <col width="120">
+                        <col width="400">
+                        <col>
+                    </colgroup>
+                    <tbody><tr>
+                        <th>No</th>
+                        <th>닉네임</th>
+                        <th>이메일</th>
+                        <th>성별</th>
+                        <th>연령대</th>
+                        <th>가입경로</th>
+                        <th>효능·부작용</th>
+                        <th>가입일</th>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>b</td>
+                        <td>b@b.b</td>
+                        <td> 남자					</td>
+                        <td>
+    60대 이상						
+                        </td>
+                        <td>지인</td>
+                        <td></td>
+                        <td>2021-07-07</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>test</td>
+                        <td>test@t.t</td>
+                        <td> 남자					</td>
+                        <td>
+    20대						
+                        </td>
+                        <td>유투브 광고</td>
+                        <td></td>
+                        <td>2021-07-07</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>이명아</td>
+                        <td>lma@0za.kr</td>
+                        <td> 여자
+                                                </td>
+                        <td>
+    30대						
+                        </td>
+                        <td>뉴스</td>
+                        <td></td>
+                        <td>2021-05-27</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>브루스</td>
+                        <td>tax@0za.kr</td>
+                        <td> 남자					</td>
+                        <td>
+    30대						
+                        </td>
+                        <td>유산균 공식 SNS채널</td>
+                        <td></td>
+                        <td>2021-05-27</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>구앙</td>
+                        <td>tndk4196@nate.com</td>
+                        <td> 여자
+                                                </td>
+                        <td>
+    20대						
+                        </td>
+                        <td>지인</td>
+                        <td>다이어트&nbsp;&nbsp;복부팽만&nbsp;&nbsp;</td>
+                        <td>2020-12-14</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>구앙</td>
+                        <td>wja02042@naver.com</td>
+                        <td> 여자
+                                                </td>
+                        <td>
+    20대						
+                        </td>
+                        <td>지인</td>
+                        <td>다이어트&nbsp;&nbsp;복부팽만&nbsp;&nbsp;</td>
+                        <td>2020-12-14</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>막대기</td>
+                        <td>0zalje@gmail.com</td>
+                        <td> 여자
+                                                </td>
+                        <td>
+    20대						
+                        </td>
+                        <td>친구</td>
+                        <td>다이어트&nbsp;&nbsp;</td>
+                        <td>2020-11-17</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>이순신</td>
+                        <td>cc@cc.cc</td>
+                        <td> 남자					</td>
+                        <td>
+    40대						
+                        </td>
+                        <td>카페</td>
+                        <td>잔변&nbsp;&nbsp;소화불량&nbsp;&nbsp;복부팽만&nbsp;&nbsp;</td>
+                        <td>2020-10-13</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>가나소프트</td>
+                        <td>a@a.a</td>
+                        <td> 남자					</td>
+                        <td>
+    60대 이상						
+                        </td>
+                        <td>앱스토어 검색</td>
+                        <td>잔변&nbsp;&nbsp;소화불량&nbsp;&nbsp;복부팽만&nbsp;&nbsp;</td>
+                        <td>2020-10-06</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>홍길동</td>
+                        <td>aaa@aaa.aaa</td>
+                        <td> 남자					</td>
+                        <td>
+    60대 이상						
+                        </td>
+                        <td>앱스토어 검색</td>
+                        <td>잔변&nbsp;&nbsp;소화불량&nbsp;&nbsp;복부팽만&nbsp;&nbsp;</td>
+                        <td>2020-10-06</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>김주원</td>
+                        <td>aa@aa.aa</td>
+                        <td> 여자
+                                                </td>
+                        <td>
+    60대 이상						
+                        </td>
+                        <td>페이스북</td>
+                        <td>설사&nbsp;&nbsp;잔변&nbsp;&nbsp;소화불량&nbsp;&nbsp;다이어트&nbsp;&nbsp;</td>
+                        <td>2020-10-06</td>
+                    </tr>
+                </tbody></table>
+                <div class="paging">
+                    <ul class="clearfix"><li class="box now_page">1</li></ul>            </div>
+             
+            </div>  
+        </div>
+        <!-- footer -->
+    </div>
+</body>

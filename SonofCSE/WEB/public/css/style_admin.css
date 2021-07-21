@@ -1,10 +1,3 @@
-html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, sub, sup, var, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure,
-header, hgroup, menu, nav, section, summary, time, mark, audio, video, textarea,button{margin:0;padding:0;border:0;font-size:100%;font-weight:normal;}
-
-li, ul{
-	list-style: none;
-}
-
 h1.login_h1{
 	float:left;
 	width:100%;
@@ -13,12 +6,38 @@ h1.login_h1{
 	text-align:center;
 }
 
+.h1_subtitle{
+	float:left;
+	width:100%;
+	font-size:24px;
+	text-align:center;
+	font-weight:500;
+	letter-spacing:0px;
+}
+
+h2.join_h2{
+	float:left;
+	width:100%;
+	margin-top:50px;
+	font-size:20px;
+	font-weight:700;
+}
+
 .login_box{
 	float:left;
 	width:380px;
 	height:300px;
 	margin-top:20px;
-	/* border:10px solid #133254; */
+	border:10px solid #133254;
+}
+
+.login_info{
+	float:left;
+	width:100%;
+	margin-top:40px;
+	text-align:center;
+	font-size:18px;
+	font-weight:500;
 }
 
 .login_form{
@@ -34,39 +53,481 @@ h1.login_h1{
 }
 
 .login_form li.pw{
-	margin-top:15px;
+	margin-top:10px;
 }
 
 .login_form li input{
 	width:298px;
-	height:50px;
-	font-size:15px;
+	height:35px;
+	font-size:16px;
 	text-indent:10px;
 	background:#f1f1f1;
 	border:1px solid #ddd;
-	border-radius:3px;
 }
 
 .login_btn{
 	float:left;
 	width:100%;
-	margin-top:40px;
+	margin-top:10px;
 	text-align:center;
 }
 
-.login_btn input{
-	width:300px;
-	height:53px;
-	background:#DAE3F3;
-	color:#5c8eff;
-	font-size:20px;
+.login_btn input[type=submit]{
+	width:300px;;
+	height:45px;
+	background:#133254;
+	color:#fff;
+	font-size:16px;
 	font-weight:700;
 	border:0;
-	border-radius:3px;
 }
 
-#login_area{
-	margin:150px auto;
-	width:400px;
+.join_btn{
+	float:left;
+	width:100%;
+	margin-top:20px;
+	text-align:center;
+	font-size:14px;
 }
 
+.login_copyright{
+	float:left;
+	width:100%;
+	margin-top:10px;
+	text-align:center;
+}
+
+.join_box{
+	float:left;
+	width:100%;
+	margin-top:10px;
+	border-top:3px solid #133555;
+}
+
+.join_box th, .join_box td{
+	height:50px;
+	border-bottom:1px solid #ccc;
+	font-size:14px;
+}
+
+.join_box th{
+	background:#efefef;
+	border-right:1px solid #ccc;
+	font-weight:700;
+}
+
+.join_box td{
+	padding-left:10px;
+}
+
+.join_box td input{
+	width:300px;
+	height:35px;
+	text-indent:5px;
+	font-size:14px;
+}
+
+
+h1.logo{
+	float:left;
+	width:300px;
+	margin:10px 0 0 20px;
+	font-size:30px;
+	font-weight:700;
+	color:#fff;
+}
+
+h1.logo span.logo_h1_subtitle{
+	font-size:20px;
+	font-weight:500;
+	color:#f1f1f1;
+}
+
+
+.top_menu{
+	float:left;
+	width:800px;
+	margin-top:20px;
+}
+
+.top_menu li{
+	float:left;
+	padding:0 20px;
+	font-size:16px;
+	color:#b9d6f1;
+	cursor:pointer;
+}
+
+.top_menu li:hover, .top_menu li.over{
+	font-weight:700;
+	color:#fff;
+}
+
+.left_title{
+	float:left;
+	width:100%;
+	text-align:center;
+	margin-top:40px;
+	font-size:30px;
+	font-weight:700;
+}
+.gnb_box{
+	float:left;
+	width:100%;
+	margin-top:40px;
+	background:#efefef;
+	border-top:1px solid #999;
+	border-bottom:1px solid #999;
+}
+.gnb{
+	float:left;
+	width:100%;
+}
+
+.gnb li{
+	float:left;
+	width:100%;
+	border-bottom:1px solid #ccc;
+}
+
+.gnb li dl{
+	float:left;
+	width:100%;
+}
+
+.gnb li dl dt{
+	float:left;
+	width:100%;
+	padding:15px 0;
+	font-size:14px;
+	font-weight:500;
+	color:#000;
+	text-indent:15px;
+	cursor:pointer;
+}
+
+.gnb li:hover dl dt, .gnb li.over dl dt{
+	background:#133555;
+	color:#fff;
+	font-weight:700;
+}
+
+.gnb li dl dd{
+	float:left;
+	display:none;
+	width:100%;
+	padding:12px 0;
+	text-indent:20px;
+	background:#ddd;
+	border-top:1px solid #ccc;
+	cursor:pointer;
+}
+
+.gnb li.over dl dd{
+	display:block;
+}
+
+.gnb li dl dd:hover, .gnb li dl dd.over{
+	background:#333;
+	color:#fff;
+}
+
+h3{
+	float:left;
+	width:110%;
+	height:38px;
+	margin-top:25px;
+	font-size:18px;
+	font-weight:700;
+	border-bottom:2px solid #999;
+}
+
+.title_list{
+	float:left;
+	width:100%;
+	height:38px;
+	margin-top:25px;
+	border-bottom:2px solid #999;
+}
+
+.title_list li{
+	float:left;
+	padding:8px 15px;
+	margin-right:5px;
+	font-size:18px;
+	font-weight:700;
+	color:#133254;
+	border-left:1px solid #ddd;
+	border-right:1px solid #ddd;
+	border-top:1px solid #ddd;
+	cursor:pointer;
+}
+
+.title_list li:hover, .title_list li.over{
+	padding:9px 16px;
+	background:#133254;
+	color:#fff;
+	border:0;
+}
+
+.content_area{
+	float:left;
+	width:100%;
+	margin-top:20px;
+}
+
+h4.today_cnt{
+	float:left;
+	width:100%;
+	margin-top:20px;
+	font-size:16px;
+	font-weight:700;
+}
+
+h4.today_cnt span{
+	color:#c41c1c;
+}
+
+.content_area h4{
+	float:left;
+	width:100%;
+	margin-top:30px;
+	padding:10px 0;
+	text-indent:10px;
+	font-size:20px;
+	font-weight:700;
+	color:#fff;
+	background:#133555;
+
+}
+
+.content_area h5{
+	float:left;
+	width:100%;
+	margin-top:20px;
+	font-size:18px;
+	font-weight:500;
+	color:#133555;
+}
+
+
+.search_area{
+	float:left;
+	width:100%;
+	margin-top:10px;
+}
+
+.search_area input[type=text], .search_area select{
+	width:25%;
+	height:30px;
+}
+
+h4.search_title{
+	float:left;
+	width:100%;
+	padding:0;
+	margin:0;
+	font-size:16px;
+	font-weight:700;
+	background:#fff;
+	color:#333;
+}
+
+.search_area_box{
+	float:left;
+	width:100%;
+	margin-top:10px;
+	background:#efefef;
+	border:1px solid #ddd;
+}
+
+.search_list{
+	float:left;
+	width:94%;
+	margin:20px 3%;
+}
+
+.search_list li{
+	float:left;
+	display:inline;
+	width:33%;
+	margin-bottom:10px;
+}
+
+.search_list li.long_li{
+	width:66%;
+}
+
+.search_list li.new_line{
+	clear:both;
+}
+
+.search_list li dl{
+	float:left;
+	width:100%;
+	font-size:14px;
+}
+
+.search_list li dl dt{
+	float:left;
+	width:20%;
+	margin-top:8px;
+}
+
+.search_list li dl dd{
+	float:right;
+	display:inline;
+	width:70%;
+}
+
+.search_list li.long_li dl{
+	float:left;
+	width:100%;
+	font-size:14px;
+}
+
+.search_list li.long_li dl dt{
+	float:left;
+	width:10%;
+	margin-top:8px;
+}
+
+.search_list li.long_li dl dd{
+	float:right;
+	display:inline;
+	width:85%;
+}
+
+.healthcare_tabs{
+	float:left;
+	width:100%;
+}
+
+.healthcare_tabs li{
+	float:left;
+	min-width:60px;
+	margin-right:10px;
+	padding:10px 15px;
+	font-size:16px;
+	font-weight:700;
+	border:1px solid #ddd;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 21px;
+	border-radius: 20px;
+	text-align:center;
+}
+
+.healthcare_tabs li.over{
+	background:#133555;
+	color:#fff;
+}
+.healthcare2{
+	display:none;
+}
+
+
+
+
+#right_layer{
+	position:fixed;
+	width:300px;
+	height:100%;
+	top:0px;
+	right:0;
+}
+
+.left_table{
+	float:left;
+	width:49%;
+	border-left:1px solid #ddd;
+	border-top:1px solid #ddd;
+}
+
+.left_table th, .left_table td{
+	border-right:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	padding:8px 0;
+	text-align:center;
+	font-size:12px;
+	font-weight:700;
+}
+
+.left_table th{
+	background:#333;
+	color:#fff;
+}
+
+.left_table td{
+	text-align:left;
+	padding-left:10px;
+	background:#fff;
+}
+
+.explain_stats_list{
+	float:left;
+	width:100%;
+	margin-top:10px;
+	border-top:2px solid #333;
+}
+
+.explain_stats_list li{
+	float:left;
+	width:33%;
+}
+
+.explain_stats_list li.last_li{
+	width:34%;
+}
+
+.explain_stats_list li dl{
+	float:left;
+	width:100%;
+	border-top:1px solid #ddd;
+	border-left:1px solid #ddd;
+}
+
+.explain_stats_list li dl dt, .explain_stats_list li dl dd{
+	float:left;
+	padding:10px 0;
+	border-right:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	font-size:14px;
+	height:40px;
+}
+
+.explain_stats_list li dl dt{
+	width:60%;
+	background:#efefef;
+	text-indent:10px;
+	font-weight:700;
+}
+
+.explain_stats_list li dl dd{
+	width:39%;
+	text-align:center;
+}
+
+/* 검색 */
+.search_area{
+	width:110%;
+}
+
+.search_form{
+    float:right;
+	width:60%;
+	margin-right:-342px;
+}
+
+.search_form2{
+    float:right;
+	width:60%;
+	margin-right:-138px;
+}
+
+.search_box{
+	text-indent: 5px;
+	height: 28px;
+    vertical-align: middle;
+    border: 1px solid #bbb;
+	width: 100px;
+}
