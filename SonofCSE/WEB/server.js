@@ -21,7 +21,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(fileUpload());
 
-app.use(express.static(__dirname + '/public/views'));
+app.use(express.static(__dirname + '/public/stylesheets'));
 
 app.get('/', (req, res) => {
 	res.redirect('/login');
