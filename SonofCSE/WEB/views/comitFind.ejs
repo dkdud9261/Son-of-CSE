@@ -79,9 +79,11 @@
     });
     
     function successCallback(position) {
-      /* 위도 */ var latitude = position.coords.latitude;
-      /* 경도 */ var longitude = position.coords.longitude; 
+      /* 위도 */ //var latitude = position.coords.latitude;
+      /* 경도 */ //var longitude = position.coords.longitude; 
       /* Google Map으로 위도와 경도 초기화 */
+      var latitude = 35.885991;
+      var longitude = 128.609924;
       initialize(latitude, longitude);
     }
     /*
@@ -117,7 +119,7 @@
       /* 현재 위치의 위도와 경도 정보를 currentLocatioon 에 초기화 */
       var mapOptions = {
         center : {lat : latitude, lng : longitude}, /* 지도에 보여질 위치 */ 				
-        zoom : 14, /* 지도 줌 (0축소 ~ 18확대),  */ 	
+        zoom : 18, /* 지도 줌 (0축소 ~ 18확대),  */ 	
         mapTypeId : google.maps.MapTypeId.ROADMAP
       };
       /* DIV에 지도 달아주기 */
