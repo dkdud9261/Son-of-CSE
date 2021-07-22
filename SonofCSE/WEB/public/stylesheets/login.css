@@ -1,0 +1,185 @@
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: 400;
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+  src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix")
+      format("embedded-opentype"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff")
+      format("woff"),
+    url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf")
+      format("truetype");
+}
+
+.nanumbarungothic * {
+  font-family: "NanumBarunGothic", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "NanumBarunGothic";
+}
+body {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+.div1 {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.div1 #bg1 {
+  width: 100%;
+  height: 100%;
+  transition: all 2s ease-out;
+  background: #006064;
+}
+#title {
+  font-size: xx-large;
+  padding-top: 10%;
+  text-align: center;
+  color: white;
+}
+.div1 #bg1 .wrap {
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.div1 #bg1 .wrap #kakao-login-btn {
+  margin-top: 20px;
+}
+.div2 {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.div2 #bg2 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: all 2s ease-out;
+  background: #006064;
+}
+input {
+  width: 90%;
+  height: 30px;
+}
+#nickname {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+form {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+tbody {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+tr {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+  margin: 3px 0px;
+}
+td {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+}
+.button {
+  margin-top: 20px;
+  background: none;
+  border-radius: 10px;
+  border: solid white;
+  width: 150px;
+  height: 50px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+}
+.table1 {
+  visibility: hidden;
+}
+h3 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+}
+#label {
+  display: flex;
+  position: relative;
+  justify-content: left;
+  align-items: center;
+  width: 300px;
+  overflow: hidden;
+}
+#label #labelText {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#label .imgLabel {
+  margin-top: 22px;
+}
+span {
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+}
+input {
+  border: none;
+  outline: none;
+  background: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+}
+#image {
+  visibility: hidden;
+}
+td img {
+  display: none;
+  width: 100px;
+  height: 100px;
+  object-fit: fill;
+}
+.imgBox {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+#guide {
+  margin-top: 20px;
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+}
+.inputImg {
+  width: 40px;
+  height: 40px;
+}

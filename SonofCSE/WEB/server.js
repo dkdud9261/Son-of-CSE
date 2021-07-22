@@ -24,7 +24,7 @@ app.use(fileUpload());
 app.use(express.static(__dirname + '/public/stylesheets'));
 
 app.get('/', (req, res) => {
-	res.redirect('/comitFind');
+	res.redirect('/login');
 });
 
 app.get('/test', (req, res)=> {
@@ -54,12 +54,9 @@ app.get('/comitTalk', (req, res)=> {
 
 app.post('/posts/store', async (req, res) => {
 	await User.create(req.body);
-<<<<<<< HEAD
 	nickname = req.body.nickname;
 	image = req.body.image;
 	//console.log(nickname + " " + image);
-=======
->>>>>>> 22a9d793b1ee551e736ea4138d59daa664270ff9
 	res.redirect('/comitFind');
 });
 
