@@ -31,7 +31,7 @@ app.get('/test', (req, res)=> {
 	res.render('map');
 });
 
-var _id;
+var _id, nickname;
 
 app.get('/login', (req, res)=> {
 	res.render('login');
@@ -62,6 +62,7 @@ app.post('/posts/store', async (req, res) => {
 	await User.create(req.body, (error, user) => {
 		console.log(error, user);
 		_id = user._id;
+		nickname = user.nickname;
 	});
 	//console.log("지금 확인 : " + req.body._id);
 	res.redirect('/comitFind');
@@ -82,7 +83,7 @@ var count=1;
 // 채팅방에 접속했을 때 - 1
 io.on('connection', function(socket){
 	console.log('user connected: ', socket.id);
-	var name = "익명" + count++;
+	var name = nickname;
 	socket.name = name;
 	io.to(socket.id).emit('create name', name);
 	
