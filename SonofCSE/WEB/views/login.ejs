@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="/login.css" type="text/css"/>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport"
+    content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+
+<body>
+  <!-- 스크롤 움직이기 -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#kakao-login-btn').click(function () {
+        var offset = $('#div2').offset();
+        $('html').animate({ scrollTop: offset.top }, 400);
+      });
+    });
+  </script>
+
+  <div id="div1" class="div1">
+    <!-- <button id="btn1"></button> -->
+    <section id="bg1">
+      <div>
+        <h2 id="title">COM it ! </br> 컴퓨터학부를 잇다</h2>
+      </div>
+      <div class="wrap">
+        <a id="kakao-login-btn"></a>
+      </div>
+      <a href="http://developers.kakao.com/login"></a>
+      <script type='text/javascript'>
+        var id = null;
+        var nickname = null;
+        var image = null;
+
+        Kakao.init('e1312a8c9d7419235dbd507b6ed66499'); //api
+
+        Kakao.Auth.createLoginButton
+          ({
+            container: '#kakao-login-btn',
+            success: function (authObj) {
+              var offset = $('#div2').offset();
+              $('html').animate({ scrollTop: offset.top }, 400);
+              console.log("success!");
+              Kakao.API.request
+                ({
+                  url: '/v2/user/me',
+                  success: function (response) {
+                    id = response['id'];
+                    nickname = response.properties['nickname'];
+                    image = response.properties['thumbnail_image'];
+                    console.log(id, nickname, image)
+                    document.getElementById('id').value = id;
+                    document.getElementById('nickname').value = nickname;
+                    document.getElementById('image').value = image;
+                  }
+                })
+            },
+            fail: function (err) {
+              alert(JSON.stringify(err));
+            }
+          });
+      </script>
+      <!-- background -->
+      <!-- <script>
+      var blendAmount = 70;
+      var delay = -10;
+      var windowWidth = window.innerWidth;
+      var bg = document.getElementById("bg");
+
+      document.onclick = function (e) {
+        mouseX = Math.round(e.pageX / windowWidth * 100 - delay);
+        col1 = mouseX - blendAmount;
+        col2 = mouseX + blendAmount;
+        bg.style.background = "linear-gradient(to right, #ffc3a0 " + col1 + "%, #ffafbd " + col2 + "%)";
+      }
+    </script> -->
+    </section>
+  </div>
+  <div id="div2" class="div2">
+    <section id="bg2">
+      <form action="/posts/store" method="POST">
+        <table class="submit_table">
+          <tr class="table1">
+            <td id="label">
+              <h3>ID</h3>
+            </td>
+            <td>
+              <input readonly type="number" name="id" id="id" value="" size="70%" value="">
+            </td>
+          </tr>
+
+          <tr>
+            <td id="label">
+              <h3>Nickname</h3>
+            </td>
+            <td>
+              <input readonly type="text" name="nickname" id="nickname" value="" size="70%" value="">
+            </td>
+          </tr>
+
+          <tr>
+            <td id="label">
+              <h3 class="imgLabel">Image</h3>
+            </td>
+            <td id="labelText">
+              <input readonly type="text" name="image" id="image" value="" size="70%" value="">
+              <span id="showSpan" onclick="showImg()">사진 보기</span>
+              <div class="imgBox">
+                <img id="showImage"/>
+              </div>
+            </td>
+          </tr>
+
+        </table>
+        <div id="guide">해당 내용은 로그인 후, 수정가능합니다.</div>
+        <button type="submit" class="button">시 작 하 기</button>
+      </form>
+      <script>
+        var bg1 = document.getElementById("bg1");
+        var bg2 = document.getElementById("bg2");
+
+        setInterval(function () {
+          var color = Math.random() * 0xffffff;
+          color = parseInt(color);
+          color = color.toString(16);
+
+          bg1.style.background = "#" + color;
+          bg2.style.background = "#" + color;
+
+        }, 3000);
+        const showImg = () => {
+          var url = document.getElementById("image").value;
+          var span = document.getElementById("showSpan");
+          span.style.display = "none";
+          var image = document.getElementById("showImage");
+          image.src= url;
+          image.style.display = "flex";
+        }
+      </script>
+    </section>
+  </div>
+  </body>
+</html>
