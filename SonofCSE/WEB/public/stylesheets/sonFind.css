@@ -97,7 +97,7 @@
 }
 #map_canvas {
   width: 100%;
-  height: calc(100vh - 60px);
+  height: 100vh;
 }
 .fixedContainer {
   position: fixed;
@@ -161,13 +161,9 @@
   font-weight: 600;
   color: #fff;
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .body_container .body_header .upper_header {
-    height: 10vh;
-  }
+@media only screen and (min-device-width: 320px) and (max-device-width: 500px) {
   #map_canvas {
-    min-height: 90vh;
-    height: 90vh;
+    height: 100vh;
   }
   .body_container .body_header .upper_header .left_header span {
     font-size: 80px;

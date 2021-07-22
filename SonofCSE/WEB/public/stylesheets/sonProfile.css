@@ -121,8 +121,6 @@
   border-color: #ddd;
 }
 .user_container .user_img_container {
-  width: 100px;
-  height: 100px;
 }
 .user_container .user_img_container img {
   width: 100px;
@@ -131,7 +129,7 @@
 }
 .user_container .user_name {
   text-align: center;
-  width: 200px;
+  width: 100%;
   margin-bottom: 20px;
 }
 .user_container .user_name span {
@@ -158,9 +156,6 @@
   border: none;
   outline: none;
   margin-bottom: 10px;
-  border-bottom: solid;
-  border-color: #d02316;
-  border-width: 2px;
   color: #000;
   font-weight: 700;
   font-size: 18px;
@@ -246,7 +241,7 @@
   font-weight: 600;
   color: #fff;
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 500px) {
   .body_container .body_header .upper_header {
     height: 10vh;
   }
@@ -280,5 +275,41 @@
   }
   #boxContainer span {
     font-size: 55px;
+  }
+  .user_container {
+    min-height: 70%;
+  }
+  .user_container .user_img_container img {
+    width: 500px;
+    height: 500px;
+  }
+  .user_container .user_name {
+    text-align: center;
+    width: 100%;
+    margin: 50px 0px;
+  }
+  .user_container .user_name span {
+    color: #000;
+    font-size: 55px;
+    font-weight: 700;
+  }
+  .user_container .hashtag_container .hashtag {
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+  }
+  .main_container .chat_btn {
+    margin-top: 50px;
+    width: 300px;
+    height: 100px;
+    outline: none;
+    background-color: #fff;
+    border-bottom: solid;
+    border-color: #d02316;
+    border-width: 2px;
+    border-radius: 30px;
+    font-size: 40px;
+    font-weight: 700;
+    transition: 0.4s;
   }
 }

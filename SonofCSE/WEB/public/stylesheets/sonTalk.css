@@ -156,7 +156,7 @@
   text-align: center;
 }
 .body_container .body_lower .b .form_container #message {
-  width: 60%;
+  width: 80%;
   height: 100%;
   border: none;
   outline: none;
@@ -258,9 +258,7 @@ center {
   font-weight: 600;
   color: #fff;
 }
-@media (max-width: 550px) {
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 500px) {
   .body_container .body_header .upper_header {
     height: 10vh;
   }
@@ -294,5 +292,22 @@ center {
   }
   #boxContainer span {
     font-size: 55px;
+  }
+  center {
+    width: 80%;
+    height: 900;
+  }
+  .a {
+    height: 90px !important;
+  }
+  .a button {
+    height: 90px !important;
+    font-size: 40px !important;
+  }
+  .b {
+    height: 800px !important;
+  }
+  #chatlog {
+    height: 720px !important;
   }
 }
