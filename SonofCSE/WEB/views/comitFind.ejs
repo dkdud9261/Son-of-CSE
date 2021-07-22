@@ -35,17 +35,7 @@
       /* Google Map으로 위도와 경도 초기화 */
       initialize(latitude, longitude);
     }
-    /*
-    var w = "";
-    var h = "";
-    var img = new Image();
-    img.onload = function(){
-      w = img.clientWidth;
-      h = this.clientHeight;
-    };
-    img.src = "https://github.com/Yoonlang/web-programming/blob/master/html/assets/bell1.png";
-    console.log(w + " " + h);
-    */
+    const image = "https://github.com/Yoonlang/web-programming/blob/master/html/assets/bell1.png";
     function initialize(latitude, longitude) {
       /* 현재 위치의 위도와 경도 정보를 currentLocatioon 에 초기화 */
       var mapOptions = {
@@ -59,8 +49,7 @@
       /* 지도 위에 마커 달아주기 */
       marker = new google.maps.Marker({
         position : {lat : latitude, lng : longitude},
-        map : map
-        //icon: image
+        map
       });
       google.maps.event.addListener(marker, 'click', toggleBounce(marker));
       marker = new google.maps.Marker({
@@ -69,7 +58,8 @@
       });
       marker = new google.maps.Marker({
         position : {lat: 35.8975136, lng: 128.6145696},
-        map
+        map,
+        icon: image
       });
       // This event listener will call addMarker() when the map is clicked.
       /* 지도에서 마우스 클릭시 마커 생성 */
