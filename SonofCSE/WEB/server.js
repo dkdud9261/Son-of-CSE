@@ -39,26 +39,27 @@ app.get('/comitFind', async (req, res)=> {
 	const users = await User.find({});
 	res.render('comitFind', {users});
 });
+var nickname, image;
 app.get('/comitMyProfile', (req, res)=> {
-	res.render('comitMyProfile');
+	res.render('comitMyProfile', {nickname, image});
+	console.log(nickname + " " + image);
 });
-app.get('/comitProfile', (req, res)=> {
-	res.render('comitProfile');
+app.get('/comitProfile', async (req, res)=> {
+	const users = await User.find({});
+	res.render('comitProfile', {users});
 });
 app.get('/comitTalk', (req, res)=> {
 	res.render('comitTalk');
 });
 
-app.get('/monitor', async (req, res) => {
-	const users = await User.find({});
-	res.render('monitor', {
-		users
-	});
-	console.log("users.length : " + users.length);
-});
-
 app.post('/posts/store', async (req, res) => {
 	await User.create(req.body);
+<<<<<<< HEAD
+	nickname = req.body.nickname;
+	image = req.body.image;
+	//console.log(nickname + " " + image);
+=======
+>>>>>>> 22a9d793b1ee551e736ea4138d59daa664270ff9
 	res.redirect('/comitFind');
 });
 

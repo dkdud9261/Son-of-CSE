@@ -53,6 +53,9 @@
         <p2> 
           <%= users[i].longitude %>
         </p2>
+        <p3>
+          <%= users[i].image %>
+        </p3>
         <% } %>
   </div>
   <script type="text/javascript">
@@ -102,6 +105,12 @@
     longitudes = longitudes.filter(function(s) {
       return Number(s) != 0;
     });
+    images = $("p3").text().split('\n');
+    images = images.filter(function(s) {
+      return Number(s) != 0;
+    });
+   // for(var i = 0; i < users_len; i++) 
+   // console.log(images);
     var users_len = $("#users_len").text() * 1;
     //latitudes.push($("p1").text());
     //longitudes.push($("p2").text());
@@ -127,10 +136,17 @@
         console.log(users_len);
         marker = new google.maps.Marker({
           position: {lat: Number(latitudes[i]), lng : Number(longitudes[i])},
-          map : map
+          map,
+          icon: images[i]
         });
+        google.maps.event.addDomListener(marker, 'click', (function(marker, i) {
+          return function() {
+            localStorage.setItem('DBindex', i);
+            location.replace('/comitProfile');
+          }
+        })(marker, i))
         //console.log(latitudes);
-        console.log(Number(latitudes[i]) + " " + Number(longitudes[i]));
+        //console.log(Number(latitudes[i]) + " " + Number(longitudes[i]));
       }
       // marker = new google.maps.Marker({
       //   position : {lat: 35.8875136, lng: 128.6145696},
@@ -142,11 +158,9 @@
       // });
       // This event listener will call addMarker() when the map is clicked.
       /* 지도에서 마우스 클릭시 마커 생성 */
-      /*
-      google.maps.event.addListener(map, 'click', function(event) {
-        addMarker(event.latLng);
-      });
-      */
+      // google.maps.event.addListener(map, 'click', function(event) {
+      //   addMarker(event.latLng);
+      // });
     }
     // Add a marker to the map and push to the array.
     /*
