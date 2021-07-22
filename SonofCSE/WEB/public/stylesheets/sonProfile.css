@@ -245,8 +245,12 @@
   .body_container .body_header .upper_header {
     height: 10vh;
   }
-  .body_container .body_lower {
-    min-height: 90vh;
+  .body_container .main_container {
+    height: 90vh;
+  }
+  .body_container .body_header .upper_header .left_header {
+    width: 400px;
+    height: 100%;
   }
   .body_container .body_header .upper_header .left_header span {
     font-size: 80px;

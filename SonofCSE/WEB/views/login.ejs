@@ -52,7 +52,7 @@
                   success: function (response) {
                     id = response['id'];
                     nickname = response.properties['nickname'];
-                    image = response.properties['thumbnail_image'];
+                    image = response.properties['profile_image'];
                     console.log(id, nickname, image);
                     document.getElementById('id').value = id;
                     document.getElementById('nickname').value = nickname;

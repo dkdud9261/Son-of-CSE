@@ -13,87 +13,22 @@
   position: relative;
   flex-direction: column;
 }
-.body_container .body_header {
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+.body_container .backContainer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 90px;
   z-index: 2;
 }
-.body_container .body_header .upper_header {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 60px;
-  background-color: #d02316;
-}
-.body_container .body_header .upper_header .left_header {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  width: 200px;
-  height: 100%;
-}
-.body_container .body_header .upper_header .left_header span {
-  color: #fff;
-  font-size: 25px;
-  font-weight: 800;
-  word-spacing: -8px;
-  white-space: nowrap;
-}
-.body_container .body_header .lower_header {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 50px;
-}
-.body_container .body_header .lower_header a {
-  width: 25%;
-  height: 100%;
-  display: flex;
-  position: relative;
-  text-decoration: none;
-}
-.body_container .body_header .lower_header .menu {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  transition: 0.1s;
-}
-.body_container .body_header .lower_header .menu:hover {
-  cursor: pointer;
-  background: rgba(208, 35, 22, 0.3);
-}
-.body_container .body_header .lower_header .menu .menu_text {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-.body_container .body_header .lower_header .menu .menu_text span {
-  font-size: 17px;
-  font-weight: 500;
-  white-space: nowrap;
-  color: #000;
-}
-.body_container .body_header .lower_header .menu .menu_underbar {
-  visibility: hidden;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: #d02316;
-}
-.body_container .body_header .lower_header #fin_customer .menu_underbar {
-  visibility: visible;
+.body_container .backContainer img {
+  width: 70px;
+  height: 70px;
+  object-fit: fill;
+  transform: rotate(180deg);
 }
 .body_container .body_lower {
   display: flex;
@@ -102,8 +37,7 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  min-height: calc(100vh - 60px);
-  height: 100%;
+  height: 100vh;
 }
 .btn.btn-info {
   width: 100%;
@@ -113,7 +47,6 @@
   border: none;
   background-color: #f1afaa;
   border: none;
-  border-radius: 20px 20px 0px 0px;
   margin: 0px;
   padding: 0px;
   border-bottom: solid;
@@ -129,7 +62,6 @@
   height: 520px;
   background-color: #f1afaa;
   border: none;
-  border-radius: 0px 0px 20px 20px;
 }
 .body_container .body_lower .b .form_container {
   width: 100%;
@@ -145,7 +77,11 @@
   height: 100%;
 }
 .body_container .body_lower .b .form_container #name {
-  width: 20%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
   height: 100%;
   border: none;
   outline: none;
@@ -154,13 +90,16 @@
   border-width: 1px;
   border-color: #ddd;
   text-align: center;
+  font-size: 30px;
+  font-weight: 600;
 }
 .body_container .body_lower .b .form_container #message {
-  width: 80%;
+  width: 70%;
   height: 100%;
   border: none;
   outline: none;
   padding-left: 5px;
+  font-size: 30px;
 }
 .body_container .body_lower .b .form_container .btn-primary {
   display: flex;
@@ -294,8 +233,8 @@ center {
     font-size: 55px;
   }
   center {
-    width: 80%;
-    height: 900;
+    width: 100% !important;
+    height: 100vh !important;
   }
   .a {
     height: 90px !important;
@@ -305,9 +244,9 @@ center {
     font-size: 40px !important;
   }
   .b {
-    height: 800px !important;
+    height: calc(100vh - 90px) !important;
   }
   #chatlog {
-    height: 720px !important;
+    height: calc(100% - 80px) !important;
   }
 }
