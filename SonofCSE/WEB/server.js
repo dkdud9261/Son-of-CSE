@@ -85,6 +85,6 @@ io.on('connection', function(socket){
 	
 });
 
-app.listen(4000, function(){ 
+http.listen(4000, function(){ 
 	console.log('server on..');
 });
