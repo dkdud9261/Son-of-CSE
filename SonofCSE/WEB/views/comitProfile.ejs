@@ -14,6 +14,7 @@
                 <span>컴잇</span>
             </div>
         </div>
+        <!--
         <div class="lower_header">
             <a href="/comitFind" target="_self">
                 <div class="menu" id="new_customer">
@@ -40,6 +41,7 @@
                 </div>
             </a>
         </div>
+        -->
       </div>
       <div class="main_container">
         <div class="user_container">
@@ -70,8 +72,39 @@
           <%= users[i].like %>
         </p3>
         <% } %>
+        <div class="fixedContainer" onclick="showFixed()">
+          <div class="fixed">
+            <img src="https://github.com/Yoonlang/web-programming/blob/master/html/assets/menu4.png?raw=true" />
+          </div>
+        </div>
+        <div id="boxContainer">
+          <a href="/comitFind">
+            <div class="fixedBox">
+              <span>지도로 가기</span>
+            </div>
+          </a>
+          <a href="/comitTalk">
+            <div class="fixedBox1">
+              <span>채팅 목록</span>
+            </div>
+          </a>
+          <a href="/comitMyProfile">
+            <div class="fixedBox2">
+              <span>내 프로필</span>
+            </div>
+          </a>
+        </div>
   </body>
   <script>
+    const showFixed = () =>{
+      var box = document.getElementById("boxContainer");
+      if(box.style.display == "none"){
+        box.style.display = "flex";
+      }
+      else{
+        box.style.display = "none";
+      }
+    }
     var index;
     if(localStorage.getItem('DBindex')) {
       index = localStorage.getItem('DBindex');
