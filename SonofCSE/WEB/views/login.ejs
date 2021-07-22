@@ -80,17 +80,23 @@
     }
 
     input {
-      align-items: center;
+      align-items: left;
+      width: 90%;
+      height: 30px;
     }
 
     form {
-      padding-top: 50%;
-      width: 30%;
+      padding-top: 60%;
       height: 100px;
     }
-    td, tr{
-      text-align: left;
+
+    td,
+    tr {
+      text-align: center;
+      margin-left: 25%;
+      width: 50%;
     }
+
     .button {
       background-color: rgba(255, 255, 255, 0);
       border-radius: 10px;
@@ -99,6 +105,16 @@
       height: 50px;
       align-items: center;
       position: inherit;
+      margin-left: 27%;
+      margin-top: 25%;
+    }
+
+    #label {
+      width: 25%;
+    }
+
+    #guide {
+      text-align: center;
     }
   </style>
 </head>
@@ -149,6 +165,7 @@
                     console.log(id, nickname, image)
                     document.getElementById('id').value = id;
                     document.getElementById('nickname').value = nickname;
+                    document.getElementById('image').value = image;
                   }
                 })
             },
@@ -178,31 +195,35 @@
       <form action="/posts/store" method="POST">
         <table class="submit_table">
           <tr>
-            <td>
-              <h4>id</h4>
+            <td id="label">
+              <h3>ID</h3>
             </td>
             <td>
               <input readonly type="text" name="id" id="id" value="" size="70%" value="">
             </td>
           </tr>
+
           <tr>
-            <td>
-              <h4>nickname</h4>
+            <td id="label">
+              <h3>Nickname</h3>
             </td>
             <td>
-              <input type="text" name="id" id="nickname" value="" size="70%" value="">
+              <input readonly type="text" name="nickname" id="nickname" value="" size="70%" value="">
             </td>
           </tr>
+
           <tr>
-            <td>
-              <h4>like</h4>
+            <td id="label">
+              <h3>Image</h3>
             </td>
             <td>
-              <input type="text" name="id" id="like" value="" size="70%" value="">
+              <input readonly type="text" name="image" id="image" value="" size="70%" value="">
             </td>
           </tr>
+
         </table>
-        <button type="submit" class="button" id="wrap">regist</button>
+        <div id="guide">해당 내용은 로그인 후, 수정가능합니다.</div>
+        <button type="submit" class="button">regist</button>
       </form>
       <script>
         var bg1 = document.getElementById("bg1");
