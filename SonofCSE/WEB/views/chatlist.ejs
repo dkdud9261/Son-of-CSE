@@ -19,7 +19,7 @@
             border-bottom: dashed 2px #ddd;
         }
 
-        #name{
+        #name {
             text-decoration: none;
             color: black;
         }
@@ -62,36 +62,68 @@
                 </a>
             </div>
         </div>
-        <table>
-            <tr>
-                <td style="width: 50%;"><a id="name" href="/comitTalk">박정민</a></td>
-                <td style="width: 25%;">2021-07-22 22:36</td>
-            </tr>
-            <tr>
-                <td style="width: 50%;">황아영</td>
-                <td style="width: 25%;">2021-07-21 20:06</td>
-            </tr>
-            <tr>
-                <td style="width: 50%;">최윤식</td>
-                <td style="width: 25%;">2021-07-19 17:28</td>
-            </tr>
-            <tr>
-                <td style="width: 50%;">박완재</td>
-                <td style="width: 25%;">2021-07-19 21:35</td>
-            </tr>
-            <tr>
-                <td style="width: 50%;">최윤석</td>
-                <td style="width: 25%;">2021-07-15 10:36</td>
-            </tr>
-            <tr>
-                <td style="width: 50%;">박재완</td>
-                <td style="width: 25%;">2021-07-14 17:08</td>
-            </tr>
-            <tr>
-                <td style="width: 50%;">김철수</td>
-                <td style="width: 25%;">2021-07-12 11:55</td>
-            </tr>
-        </table>
+        <div class="partner_container">
+            <div class="goods_container">
+                <div class="goods_left_box">
+                    <div class="text_area">
+                        <span class="upper_text">&nbsp;야생의 박재완</span>
+                    </div>
+                    <div class="text_area">
+                        <span class="mid_text">&nbsp;안녕하세요 ! 학헬이신가봐요 ? 같이 하체 하실래요 ?</span>
+                    </div>
+                </div>
+                <a href="/comitTalk">
+                    <div class="goods_right_box">
+                        <span>확인</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="partner_container">
+            <div class="goods_container">
+                <div class="goods_left_box">
+                    <div class="text_area">
+                        <span class="upper_text">&nbsp;MBTI 교수 황아영</span>
+                    </div>
+                    <div class="text_area">
+                        <span class="mid_text">&nbsp;혹시 엠비티아이 뭐에요 ? 딱 보니까 엔프피같으신데</span>
+                    </div>
+                </div>
+                <div class="goods_right_box" onClick={open_modal}>
+                    <span>확인</span>
+                </div>
+            </div>
+        </div>
+        <div class="partner_container">
+            <div class="goods_container">
+                <div class="goods_left_box">
+                    <div class="text_area">
+                        <span class="upper_text">&nbsp;보드게임 아레나 VIP 최윤석</span>
+                    </div>
+                    <div class="text_area">
+                        <span class="mid_text">&nbsp;님 저희랑 보드게임 안하실래요 ? 셀레스티아 존잼인데 ~</span>
+                    </div>
+                </div>
+                <div class="goods_right_box" onClick={open_modal}>
+                    <span>확인</span>
+                </div>
+            </div>
+        </div>
+        <div class="partner_container">
+            <div class="goods_container">
+                <div class="goods_left_box">
+                    <div class="text_area">
+                        <span class="upper_text">&nbsp;힙합 비둘기 박정민</span>
+                    </div>
+                    <div class="text_area">
+                        <span class="mid_text">&nbsp;힙합 좋아하세요 ? 이번달에 힙페 있는데 같이 가실래요 ?!</span>
+                    </div>
+                </div>
+                <div class="goods_right_box" onClick={open_modal}>
+                    <span>확인</span>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>

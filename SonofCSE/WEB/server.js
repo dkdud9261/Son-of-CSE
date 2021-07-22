@@ -53,6 +53,11 @@ app.get('/comitTalk', (req, res)=> {
 	res.render('comitTalk');
 });
 
+app.get('/young.jpg', (req, res)=> {
+	res.render('young');
+});
+
+
 app.get('/monitor', async (req, res) => {
 	const users = await User.find({});
 	res.render('monitor', {
