@@ -27,10 +27,6 @@ app.get('/', (req, res) => {
 	res.redirect('/login');
 });
 
-app.get('/test', (req, res)=> {
-	res.render('map');
-});
-
 var _id, nickname;
 
 app.get('/login', (req, res)=> {
@@ -63,22 +59,12 @@ app.get('/comitTalk', async (req, res)=> {
 	res.render('comitTalk', {user});
 });
 
-
-app.get('/monitor', async (req, res) => {
-	const users = await User.find({});
-	res.render('monitor', {
-		users
-	});
-	console.log("users.length : " + users.length);
-});
-
 app.post('/posts/store', async (req, res) => {
 	await User.create(req.body, (error, user) => {
 		console.log(error, user);
 		_id = user._id;
 		nickname = user.nickname;
 	});
-	//console.log("지금 확인 : " + req.body._id);
 	res.redirect('/comitFind');
 });
 
