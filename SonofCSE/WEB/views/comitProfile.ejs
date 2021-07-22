@@ -60,7 +60,7 @@
         </a>
       </div>
     </div>
-    <p id="users_len"> <%= users.length %></p>
+    <p0> <%= users.length %></p0>
       <% for (var i = 0; i < users.length; i++) { %>
         <p1> 
           <%= users[i].nickname %>
@@ -125,7 +125,7 @@
     $("#nickname").html(nicknames[index]);
     $("#image").attr("src", images[index]);
     $(document).ready(function() {
-      $("#user_len").hide();
+      $("p0").hide();
       $("p1").hide();
       $("p2").hide();
       $("p3").hide();
