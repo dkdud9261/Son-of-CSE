@@ -7,6 +7,54 @@
     <link rel="stylesheet" href="/sonFind.css" type="text/css" />
   </head>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  
+  <body>
+    <div class="body_container">
+      <div class="body_header">
+          <div class="upper_header">
+              <div class="left_header">
+                  <span>컴잇</span>
+              </div>
+          </div>
+          <div class="lower_header">
+              <a href="#" target="_self">
+                  <div class="menu" id="new_customer">
+                      <div class="menu_text"><span>친구 찾기</span></div>
+                      <div class="menu_underbar"></div>
+                  </div>
+              </a>
+              <a href="/comitProfile" target="_self">
+                  <div class="menu" id="ing_customer">
+                      <div class="menu_text"><span>프로필</span></div>
+                      <div class="menu_underbar"></div>
+                  </div>
+              </a>
+              <a href="/comitTalk" target="_self">
+                  <div class="menu" id="fin_customer">
+                      <div class="menu_text"><span>채팅방</span></div>
+                      <div class="menu_underbar"></div>
+                  </div>
+              </a>
+              <a href="/comitMyProfile" target="_self">
+                  <div class="menu" id="stop_customer">
+                      <div class="menu_text"><span>내 프로필</span></div>
+                      <div class="menu_underbar"></div>
+                  </div>
+              </a>
+          </div>
+      </div>
+  </div>
+  <div id="map_canvas">
+    <p id="users_len"> <%= users.length %></p>
+      <% for (var i = 0; i < users.length; i++) { %>
+        <p1> 
+          <%= users[i].latitude %>
+        </p1>
+        <p2> 
+          <%= users[i].longitude %>
+        </p2>
+        <% } %>
+  </div>
   <script type="text/javascript">
     var nav = null;
     var map;
@@ -46,6 +94,15 @@
     img.src = "https://github.com/Yoonlang/web-programming/blob/master/html/assets/bell1.png";
     console.log(w + " " + h);
     */
+    latitudes = $("p1").text().split('\n');
+    latitudes = latitudes.filter(function(s) {
+      return Number(s) != 0;
+    });
+    longitudes = $("p2").text().split('\n');
+    longitudes = longitudes.filter(function(s) {
+      return Number(s) != 0;
+    });
+    var users_len = $("#users_len").text() * 1;
     function initialize(latitude, longitude) {
       /* 현재 위치의 위도와 경도 정보를 currentLocatioon 에 초기화 */
       var mapOptions = {
@@ -63,14 +120,24 @@
         //icon: image
       });
       google.maps.event.addListener(marker, 'click', toggleBounce(marker));
-      marker = new google.maps.Marker({
-        position : {lat: 35.8875136, lng: 128.6145696},
-        map
-      });
-      marker = new google.maps.Marker({
-        position : {lat: 35.8975136, lng: 128.6145696},
-        map
-      });
+      
+      for(var i = 0; i < users_len; i++) {
+        console.log(users_len);
+        marker = new google.maps.Marker({
+          position: {lat: Number(latitudes[i]), lng : Number(longitudes[i])},
+          map : map
+        });
+        //console.log(latitudes);
+        console.log(Number(latitudes[i]) + " " + Number(longitudes[i]));
+      }
+      // marker = new google.maps.Marker({
+      //   position : {lat: 35.8875136, lng: 128.6145696},
+      //   map
+      // });
+      // marker = new google.maps.Marker({
+      //   position : {lat: 35.8975136, lng: 128.6145696},
+      //   map
+      // });
       // This event listener will call addMarker() when the map is clicked.
       /* 지도에서 마우스 클릭시 마커 생성 */
       /*
@@ -105,44 +172,11 @@
     }
     google.maps.event.addDomListener(window, 'load', initialize);
   </script>
-  <body>
-    <div class="body_container">
-      <div class="body_header">
-          <div class="upper_header">
-              <div class="left_header">
-                  <span>컴잇</span>
-              </div>
-          </div>
-          <div class="lower_header">
-              <a href="#" target="_self">
-                  <div class="menu" id="new_customer">
-                      <div class="menu_text"><span>친구 찾기</span></div>
-                      <div class="menu_underbar"></div>
-                  </div>
-              </a>
-              <a href="/comitProfile" target="_self">
-                  <div class="menu" id="ing_customer">
-                      <div class="menu_text"><span>프로필</span></div>
-                      <div class="menu_underbar"></div>
-                  </div>
-              </a>
-              <a href="/comitTalk" target="_self">
-                  <div class="menu" id="fin_customer">
-                      <div class="menu_text"><span>채팅방</span></div>
-                      <div class="menu_underbar"></div>
-                  </div>
-              </a>
-              <a href="/comitMyProfile" target="_self">
-                  <div class="menu" id="stop_customer">
-                      <div class="menu_text"><span>내 프로필</span></div>
-                      <div class="menu_underbar"></div>
-                  </div>
-              </a>
-          </div>
-      </div>
-  </div>
-  <div id="map_canvas"></div>
-  </body>
   <script>
+   //for(var i = 0; i < Number($("#users_len").text()); i++){
+    // console.log($("p1").text());
+    // console.log($("p2").text());
+   
   </script>
+  </body>
 </html>
