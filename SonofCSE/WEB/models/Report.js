@@ -2,14 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-    id: Number,
-    nickname: String,
-    like: String,
-    image: String,
-    latitude: Number,
-    longitude: Number,
-    studentID: String,
-    state: Number
+    content: String,
+    target: String,
+    targetID: Number,
+    reporter: String,
+    reporterID: Number,
+    date: Date
 });
 
 const User = mongoose.model('Users', UserSchema);

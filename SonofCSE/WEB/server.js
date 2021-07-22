@@ -59,6 +59,31 @@ app.get('/comitTalk', async (req, res)=> {
 	res.render('comitTalk', {user});
 });
 
+app.get('/admin/cate1', async (req, res) => {
+	const users = await User.find({});
+	res.render('admin/cate1', {users});
+})
+
+app.get('/admin/cate2', async (req, res) => {
+	const users = await User.find({});
+	res.render('admin/cate2', {users});
+})
+
+app.get('/admin/cate3', async (req, res) => {
+	const users = await User.find({});
+	res.render('admin/cate3', {users});
+})
+
+app.get('/admin', async (req, res) => {
+	const users = await User.find({});
+	res.render('admin/login', {users});
+})
+
+app.get('/admin/popup', async (req, res) => {
+	const users = await User.find({});
+	res.render('admin/popup', {users});
+})
+
 app.post('/posts/store', async (req, res) => {
 	await User.create(req.body, (error, user) => {
 		console.log(error, user);

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>:: 컴잇 관리시스템 ::</title>
+    <link rel="stylesheet" type="text/css" href="/default.css" />
+    <link rel="stylesheet" type="text/css" href="/layout_admin.css" />
+    <link rel="stylesheet" type="text/css" href="/style_admin.css" />
+</head>
+<script>
+    function w_open(p_url, p_name, p_width, p_height, p_top, p_left) {
+        window.open(p_url, p_name, "width=" + p_width + ", height=" + p_height + ", left=" + p_left + ", top=" + p_top + ", resizable=no, scrollbars=auto");
+    }
+</script>
+
+<body>
+    <div id="wrap">
+        <!-- header -->
+        <div id="header">
+            <h1 class="logo">컴잇 관리자 페이지</h1>
+        </div>
+
+        <div id="container">
+
+            <div id="a_side">
+                <h2 class="left_title">카테고리</h2>
+                <div class="gnb_box">
+                    <ul class="gnb">
+                        <li class="over">
+                            <dl>
+                                <dt onclick="location.href='/admin/cate1';">가입신청 처리</dt>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt onclick="location.href='/admin/cate2';">회원정보 관리</dt>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt onclick="location.href='/admin/cate3';">신고 내역</dt>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn_area01"><input type="button" value="로그아웃" class="darkblue_btn"
+                        onclick="location.href='/admin';"></div>
+            </div>
+
+            <div id="content">
+                <h3>가입신청 리스트</h3>
+                <table class="default_table">
+                    <colgroup>
+                        <col width="40">
+                        <col width="120">
+                        <col width="80">
+                        <col width="60">
+                        <col width="660">
+                        <col width="150">
+                        <col width="150">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>No</th>
+                            <th>id</th>
+                            <th>닉네임</th>
+                            <th>관심사</th>
+                            <th>프로필사진</th>
+                            <th>latitude</th>
+                            <th>longitude</th>
+                            <th>학생증</th>
+                        </tr>
+                        <% for(var i = 0; i < users.length; i++) { %>
+                            <tr>
+                                <td><%=i+1 %></td>
+                                <td><%=users[i].id %></td>
+                                <td><%=users[i].nickname %></td>
+                                <td><%=users[i].like %></td>
+                                <td><%=users[i].image %></td>
+                                <td><%=users[i].latitude %></td>
+                                <td><%=users[i].longitude %></td>
+                                <td style="cursor: pointer;text-decoration-line: underline;"
+                                onclick="w_open('/admin/popup', '가입신청 처리', '850', '700', '100', '500');">클릭</td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+                <div class="paging">
+                    <ul class="clearfix">
+                        <li class="box now_page">1</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+    </div>
+</body>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>:: 컴잇 관리시스템 ::</title>
+    <link rel="stylesheet" type="text/css" href="/default.css" />
+    <link rel="stylesheet" type="text/css" href="/layout_admin.css" />
+    <link rel="stylesheet" type="text/css" href="/style_admin.css" />
+    </head>
+
+<body>
+    <div id="wrap">
+        <!-- header -->
+        <div id="header">
+            <h1 class="logo">컴잇 관리자 페이지</h1>
+        </div>
+
+        <div id="container">
+        
+            <div id="a_side">
+                <h2 class="left_title">카테고리</h2>
+                <div class="gnb_box">
+                    <ul class="gnb">
+                        <li>
+                            <dl>
+                                <dt onclick="location.href='/admin/cate1';">가입신청 처리</dt>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt onclick="location.href='/admin/cate2';">회원정보 관리</dt>
+                            </dl>
+                        </li>
+                        <li class="over">
+                            <dl>
+                                <dt onclick="location.href='/admin/cate3';">신고 내역</dt>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn_area01"><input type="button" value="로그아웃" class="darkblue_btn" onclick="location.href='/admin';"></div>
+            </div>
+
+            <div id="content">
+                <h3>신고 리스트</h3>
+                <table class="default_table">
+                    <colgroup>
+                        <col width="60">
+                        <col width="100">
+                        <col width="120">
+                        <col width="120">
+                        <col width="120">
+                        <col width="120">
+                        <col width="160">
+                    </colgroup>
+                    <tbody><tr>
+                        <th>No</th>
+                        <th>신고내용</th>
+                        <th>신고대상</th>
+                        <th>신고대상 id</th>
+                        <th>신고자</th>
+                        <th>신고자 id</th>
+                        <th>신고일</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>욕설</td>
+                        <td>최윤석</td>
+                        <td>1817158983</td>
+                        <td>박재완</td>
+                        <td>1817415847</td>
+                        <td>2021-07-23 06:24</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>부적절한 행위</td>
+                        <td>최윤석</td>
+                        <td>1817158983</td>
+                        <td>황아영</td>
+                        <td>1815761871</td>
+                        <td>2021-07-23 06:30</td>
+                    </tr>
+                </tbody></table>
+                <div class="paging">
+                    <ul class="clearfix"><li class="box now_page">1</li></ul>            </div>
+             
+            </div>  
+        </div>
+        <!-- footer -->
+    </div>
+</body>
