@@ -54,9 +54,12 @@ app.get('/comitTalk', (req, res)=> {
 
 app.post('/posts/store', async (req, res) => {
 	await User.create(req.body);
+<<<<<<< HEAD
 	nickname = req.body.nickname;
 	image = req.body.image;
 	//console.log(nickname + " " + image);
+=======
+>>>>>>> 22a9d793b1ee551e736ea4138d59daa664270ff9
 	res.redirect('/comitFind');
 });
 
