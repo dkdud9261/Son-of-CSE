@@ -13,6 +13,7 @@
   display: flex;
   position: relative;
   flex-direction: column;
+  min-height: 100vh;
 }
 .body_container .body_header {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -41,56 +42,6 @@
   font-weight: 800;
   word-spacing: -8px;
   white-space: nowrap;
-}
-.body_container .body_header .lower_header {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 50px;
-}
-.body_container .body_header .lower_header a {
-  width: 25%;
-  height: 100%;
-  display: flex;
-  position: relative;
-  text-decoration: none;
-}
-.body_container .body_header .lower_header .menu {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  transition: 0.1s;
-}
-.body_container .body_header .lower_header .menu .menu_text {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-.body_container .body_header .lower_header .menu .menu_text span {
-  font-size: 17px;
-  font-weight: 500;
-  white-space: nowrap;
-  color: #000;
-}
-.body_container .body_header .lower_header .menu .menu_underbar {
-  visibility: hidden;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: #d02316;
-}
-.body_container .body_header .lower_header #ing_customer .menu_underbar {
-  visibility: visible;
 }
 .main_container {
   display: flex;
@@ -226,12 +177,12 @@
   overflow: hidden;
 }
 .partner_container .goods_container .goods_left_box .text_area .upper_text {
-  font-size: 17px;
+  font-size: 30px;
   font-weight: 600;
   color: #000;
 }
 .partner_container .goods_container .goods_left_box .text_area .mid_text {
-  font-size: 15px;
+  font-size: 25px;
   color: gray;
 }
 .partner_container .goods_container .goods_left_box .text_area .mid_date_text {
@@ -270,15 +221,130 @@
   min-width: 50px;
   width: 125px;
   height: 150px;
-  background-color:#e0382c;
+  background-color: #e0382c;
   border-radius: 0px 8px 8px 0px;
   cursor: pointer;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 .partner_container .goods_container .goods_right_box span {
   color: #fff;
-  font-size: 20px;
+  font-size: 35px;
   font-weight: 700;
   writing-mode: horizontal-tb;
   text-orientation: upright;
+}
+table {
+  position: center;
+  width: 90%;
+  text-align: center;
+  margin-left: 5%;
+  margin-top: 3%;
+}
+
+td {
+  height: 75px;
+  border-bottom: dashed 2px #ddd;
+}
+
+#name {
+  text-decoration: none;
+  color: black;
+}
+.fixedContainer {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}
+.fixedContainer .fixed {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #d02316;
+  border-radius: 1000px;
+  cursor: pointer;
+}
+.fixedContainer .fixed img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  filter: invert(1);
+}
+#boxContainer {
+  display: none;
+}
+#boxContainer .fixedBox {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  bottom: 82px;
+  right: 30px;
+  width: 100px;
+  height: 30px;
+  background-color: #d02316;
+}
+#boxContainer .fixedBox1 {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  bottom: 117px;
+  right: 30px;
+  width: 100px;
+  height: 30px;
+  background-color: #d02316;
+}
+#boxContainer .fixedBox2 {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  bottom: 152px;
+  right: 30px;
+  width: 100px;
+  height: 30px;
+  background-color: #d02316;
+}
+#boxContainer span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 500px) {
+  .body_container .body_header .upper_header {
+    height: 10vh;
+  }
+  .body_container .body_lower {
+    min-height: 90vh;
+  }
+  .body_container .body_header .upper_header .left_header span {
+    font-size: 80px;
+  }
+  .fixedContainer .fixed {
+    width: 150px;
+    height: 150px;
+  }
+  #boxContainer .fixedBox {
+    bottom: 200px;
+    right: 30px;
+    width: 300px;
+    height: 100px;
+  }
+  #boxContainer .fixedBox1 {
+    bottom: 320px;
+    right: 30px;
+    width: 300px;
+    height: 100px;
+  }
+  #boxContainer .fixedBox2 {
+    bottom: 440px;
+    right: 30px;
+    width: 300px;
+    height: 100px;
+  }
+  #boxContainer span {
+    font-size: 55px;
+  }
 }

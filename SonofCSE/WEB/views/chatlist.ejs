@@ -5,25 +5,6 @@
     <meta charset="utf-8" />
     <title>chatlist</title>
     <link rel="stylesheet" href="/sonChatlist.css" type="text/css" />
-    <style>
-        table {
-            position: center;
-            width: 90%;
-            text-align: center;
-            margin-left: 5%;
-            margin-top: 3%;
-        }
-
-        td {
-            height: 75px;
-            border-bottom: dashed 2px #ddd;
-        }
-
-        #name {
-            text-decoration: none;
-            color: black;
-        }
-    </style>
 </head>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
@@ -32,34 +13,8 @@
         <div class="body_header">
             <div class="upper_header">
                 <div class="left_header">
-                    <span>컴잇</span>
+                    <span>채팅</span>
                 </div>
-            </div>
-            <div class="lower_header">
-                <a href="/comitFind" target="_self">
-                    <div class="menu" id="new_customer">
-                        <div class="menu_text"><span>친구 찾기</span></div>
-                        <div class="menu_underbar"></div>
-                    </div>
-                </a>
-                <a href="#" target="_self">
-                    <div class="menu" id="ing_customer">
-                        <div class="menu_text"><span>채팅방 목록</span></div>
-                        <div class="menu_underbar"></div>
-                    </div>
-                </a>
-                <a href="/comitTalk" target="_self">
-                    <div class="menu" id="fin_customer">
-                        <div class="menu_text"><span>채팅방</span></div>
-                        <div class="menu_underbar"></div>
-                    </div>
-                </a>
-                <a href="/comitMyProfile" target="_self">
-                    <div class="menu" id="stop_customer">
-                        <div class="menu_text"><span>내 프로필</span></div>
-                        <div class="menu_underbar"></div>
-                    </div>
-                </a>
             </div>
         </div>
         <div class="partner_container">
@@ -74,56 +29,46 @@
                 </div>
                 <a href="/comitTalk">
                     <div class="goods_right_box">
-                        <span>확인</span>
+                        <span>입장</span>
                     </div>
                 </a>
             </div>
         </div>
-        <div class="partner_container">
-            <div class="goods_container">
-                <div class="goods_left_box">
-                    <div class="text_area">
-                        <span class="upper_text">&nbsp;MBTI 교수 황아영</span>
-                    </div>
-                    <div class="text_area">
-                        <span class="mid_text">&nbsp;혹시 엠비티아이 뭐에요 ? 딱 보니까 엔프피같으신데</span>
-                    </div>
-                </div>
-                <div class="goods_right_box" onClick={open_modal}>
-                    <span>확인</span>
-                </div>
+        
+        <div class="fixedContainer" onclick="showFixed()">
+            <div class="fixed">
+              <img src="https://github.com/Yoonlang/web-programming/blob/master/html/assets/menu4.png?raw=true" />
             </div>
-        </div>
-        <div class="partner_container">
-            <div class="goods_container">
-                <div class="goods_left_box">
-                    <div class="text_area">
-                        <span class="upper_text">&nbsp;보드게임 아레나 VIP 최윤석</span>
-                    </div>
-                    <div class="text_area">
-                        <span class="mid_text">&nbsp;님 저희랑 보드게임 안하실래요 ? 셀레스티아 존잼인데 ~</span>
-                    </div>
-                </div>
-                <div class="goods_right_box" onClick={open_modal}>
-                    <span>확인</span>
-                </div>
-            </div>
-        </div>
-        <div class="partner_container">
-            <div class="goods_container">
-                <div class="goods_left_box">
-                    <div class="text_area">
-                        <span class="upper_text">&nbsp;힙합 비둘기 박정민</span>
-                    </div>
-                    <div class="text_area">
-                        <span class="mid_text">&nbsp;힙합 좋아하세요 ? 이번달에 힙페 있는데 같이 가실래요 ?!</span>
-                    </div>
-                </div>
-                <div class="goods_right_box" onClick={open_modal}>
-                    <span>확인</span>
-                </div>
-            </div>
-        </div>
+          </div>
+          <div id="boxContainer">
+            <a href="/comitFind">
+              <div class="fixedBox">
+                <span>지도로 가기</span>
+              </div>
+            </a>
+            <a href="#">
+              <div class="fixedBox1">
+                <span>채팅 목록</span>
+              </div>
+            </a>
+            <a href="/comitMyProfile">
+              <div class="fixedBox2">
+                <span>내 프로필</span>
+              </div>
+            </a>
+          </div>
+    </div>
+    <script>
+        const showFixed = () =>{
+            var box = document.getElementById("boxContainer");
+            if(box.style.display == "none"){
+                box.style.display = "flex";
+            }
+            else{
+                box.style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>
