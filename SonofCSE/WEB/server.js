@@ -31,6 +31,10 @@ app.get('/test', (req, res)=> {
 	res.render('map');
 });
 
+app.get('/login', (req, res)=> {
+	res.render('login');
+});
+
 app.get('/comitFind', async (req, res)=> {
 	const users = await User.find({});
 	res.render('comitFind', {users});
