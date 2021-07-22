@@ -6,8 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport"
     content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
-  <title>LoginK</title>
-  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>​
+  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
   <style>
     @font-face {
       font-family: 'NanumBarunGothic';
@@ -25,81 +24,200 @@
       font-family: 'NanumBarunGothic';
     }
 
-    #bg {
-      background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
-      width: 100%;
-      height: 100%;
-      position: fixed;
+    #bg1 {
+      position: absolute;
+      transition: all 2s ease-out;
       top: 0;
       left: 0;
+      width: 100%;
+      height: 100%;
       transition: all 2s ease-out;
+      background: #006064;
+
+    }
+
+    #bg2 {
+      position: inherit;
+      transition: all 2s ease-out;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: all 2s ease-out;
+      background: #006064;
+      display: flex;
+      justify-content: center;
     }
 
     .wrap {
-      height: 100%;
+      height: fit-content;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
     #kakao-login-btn {
-      margin-bottom: 30%;
+      margin-bottom: 0;
+      margin-top: 5%;
       position: inherit;
     }
 
     #title {
       font-size: xx-large;
-      padding-top: 5%;
+      padding-top: 10%;
       text-align: center;
       color: white;
+    }
+
+    #div1 {
+      height: 800px;
+    }
+
+    #div2 {
+
+      height: 800px;
+    }
+
+    input {
+      align-items: center;
+    }
+
+    form {
+      padding-top: 50%;
+      width: 30%;
+      height: 100px;
+    }
+    td, tr{
+      text-align: left;
+    }
+    .button {
+      background-color: rgba(255, 255, 255, 0);
+      border-radius: 10px;
+      border: solid white;
+      width: 150px;
+      height: 50px;
+      align-items: center;
+      position: inherit;
     }
   </style>
 </head>
 
 <body>
-  <section id="bg">
-    <div>
-      <h2 id="title">Com it ! </br> 컴퓨터학부를 잇다</h2>
-    </div>
-    <div class="wrap">
-      <a id="kakao-login-btn"></a>
-    </div>
-    <a href="http://developers.kakao.com/login" onclick=""></a>
-    <script type='text/javascript'>
-      Kakao.init('e1312a8c9d7419235dbd507b6ed66499');
-      Kakao.Auth.createLoginButton({
-        container: '#kakao-login-btn',
-        success: function (authObj) {
-          console.log("success!");
-          Kakao.API.request({
-            url: '/v2/user/me',
-            success: function (response) {
-              console.log(response);
-            }
-          })
-        },
-        fail: function (err) {
-          alert(JSON.stringify(err));
-        }
+  <!-- 스크롤 움직이기 -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#kakao-login-btn').click(function () {
+        var offset = $('#div2').offset();
+        $('html').animate({ scrollTop: offset.top }, 400);
       });
-    </script>
-    <script>
+    });
+  </script>
+
+  <div id="div1" class="div">
+    <!-- <button id="btn1"></button> -->
+    <section id="bg1">
+      <div>
+        <h2 id="title">COM it ! </br> 컴퓨터학부를 잇다</h2>
+      </div>
+      <div class="wrap">
+        <a id="kakao-login-btn"></a>
+      </div>
+      <a href="http://developers.kakao.com/login"></a>
+      <script type='text/javascript'>
+        var id = null;
+        var nickname = null;
+        var image = null;
+
+        Kakao.init('e1312a8c9d7419235dbd507b6ed66499'); //api
+
+        Kakao.Auth.createLoginButton
+          ({
+            container: '#kakao-login-btn',
+            success: function (authObj) {
+              var offset = $('#div2').offset();
+              $('html').animate({ scrollTop: offset.top }, 400);
+              console.log("success!");
+              Kakao.API.request
+                ({
+                  url: '/v2/user/me',
+                  success: function (response) {
+                    id = response['id'];
+                    nickname = response.properties['nickname'];
+                    image = response.properties['profile_image'];
+                    console.log(id, nickname, image)
+                    document.getElementById('id').value = id;
+                    document.getElementById('nickname').value = nickname;
+                  }
+                })
+            },
+            fail: function (err) {
+              alert(JSON.stringify(err));
+            }
+          });
+      </script>
+      <!-- background -->
+      <!-- <script>
       var blendAmount = 70;
       var delay = -10;
       var windowWidth = window.innerWidth;
       var bg = document.getElementById("bg");
-  
-      document.onmousemove = function (e) {
+
+      document.onclick = function (e) {
         mouseX = Math.round(e.pageX / windowWidth * 100 - delay);
-  
         col1 = mouseX - blendAmount;
         col2 = mouseX + blendAmount;
-  
         bg.style.background = "linear-gradient(to right, #ffc3a0 " + col1 + "%, #ffafbd " + col2 + "%)";
-  
       }
-    </script>
-  </section>
-</body>
+    </script> -->
+    </section>
+  </div>
+  <div id="div2" class="div">
+    <section id="bg2">
+      <form action="/posts/store" method="POST">
+        <table class="submit_table">
+          <tr>
+            <td>
+              <h4>id</h4>
+            </td>
+            <td>
+              <input readonly type="text" name="id" id="id" value="" size="70%" value="">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4>nickname</h4>
+            </td>
+            <td>
+              <input type="text" name="id" id="nickname" value="" size="70%" value="">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4>like</h4>
+            </td>
+            <td>
+              <input type="text" name="id" id="like" value="" size="70%" value="">
+            </td>
+          </tr>
+        </table>
+        <button type="submit" class="button" id="wrap">regist</button>
+      </form>
+      <script>
+        var bg1 = document.getElementById("bg1");
+        var bg2 = document.getElementById("bg2");
+
+        setInterval(function () {
+          var color = Math.random() * 0xffffff;
+          color = parseInt(color);
+          color = color.toString(16);
+
+          bg1.style.background = "#" + color;
+          bg2.style.background = "#" + color;
+
+        }, 3000);
+      </script>
+    </section>
+  </div>
 
 </html>

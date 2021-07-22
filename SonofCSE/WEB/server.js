@@ -9,10 +9,9 @@ var path = require('path');
 var fileUpload = require('express-fileupload');
 const mongoose = require('mongoose');
 const User = require('./models/User');
+const DBurl = require('./public/assets/keys');
 
-
-
-mongoose.connect('mongodb://localhost/Com_it', {useNewUrlParser:true});
+mongoose.connect(DBurl, {useUnifiedTopology: true, useNewUrlParser:true});
 
 app.set('views', './views');
 app.set('view engine', 'ejs');
@@ -25,17 +24,20 @@ app.use(fileUpload());
 app.use(express.static(__dirname + '/public/stylesheets'));
 
 app.get('/', (req, res) => {
-	res.render('chat');
+	res.redirect('/comitFind');
 });
 
-app.get('/map', (req, res)=> {
+app.get('/test', (req, res)=> {
 	res.render('map');
 });
 
-app.use(cors());
+app.get('/login', (req, res)=> {
+	res.render('login');
+});
 
-app.get('/comitFind', (req, res)=> {
-	res.render('comitFind');
+app.get('/comitFind', async (req, res)=> {
+	const users = await User.find({});
+	res.render('comitFind', {users});
 });
 app.get('/comitMyProfile', (req, res)=> {
 	res.render('comitMyProfile');
