@@ -171,9 +171,10 @@
   display: flex;
   position: relative;
   align-items: center;
+  justify-content: center;
   padding-left: 10px;
   width: 100%;
-  height: calc(100% / 3);
+  height: 100%;
   overflow: hidden;
 }
 .partner_container .goods_container .goods_left_box .text_area .upper_text {
