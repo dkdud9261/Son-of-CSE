@@ -24,7 +24,7 @@ app.use(fileUpload());
 app.use(express.static(__dirname + '/public/stylesheets'));
 
 app.get('/', (req, res) => {
-	res.redirect('/comitFind');
+	res.redirect('/login');
 });
 
 app.get('/test', (req, res)=> {
