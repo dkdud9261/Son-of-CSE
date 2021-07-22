@@ -44,13 +44,11 @@ app.get('/comitFind', async (req, res)=> {
 	res.render('comitFind', {users});
 });
 var nickname, image;
+
 app.get('/comitMyProfile', (req, res)=> {
-	res.render('comitMyProfile');
 	res.render('comitMyProfile', {nickname, image});
 	console.log(nickname + " " + image);
 });
-app.get('/comitProfile', (req, res)=> {
-	res.render('comitProfile');
 app.get('/comitProfile', async (req, res)=> {
 	const users = await User.find({});
 	res.render('comitProfile', {users});
