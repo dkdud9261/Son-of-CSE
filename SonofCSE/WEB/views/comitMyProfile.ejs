@@ -46,15 +46,17 @@
       <div class="main_container">
         <div class="user_container">
           <div class="user_img_container">
-              <img src= <%= image %> />
+              <img src= <%= user.image %> />
           </div>
           <div class="user_name">
               <span>
-                  <%= nickname %>
+                  <%= user.nickname %>
                 </span>
           </div>
           <div class="hashtag_container">
-            <span class="hashtag">#애완동물</span>
+            <span class="hashtag">
+                    # <%= user.like %>
+            </span>
           </div>
         </div>
         <button class="update_btn" onclick="open_modal()">수정하기</button>
