@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <title>talk</title>
     <link rel="stylesheet" href="/sonTalk.css" type="text/css"/>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"> </script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.js"></script>
   </head>
@@ -50,15 +49,12 @@
     <div class="body_lower">
         <center>
             <div class="a">
-                <button class="btn btn-info" type="button">COMit 채팅방 </button>
+                <button class="btn btn-info" type="button">컴잇 채팅방 </button>
             </div>
             <div class="b">
                 <textarea class="form-control" id="chatLog" readonly> </textarea>
                 <div class="form_container">
                     <form id="chat">
-                        <div class="form-control" id="name" type="text">
-                          <%= user.nickname %>
-                        </div>
                         <input class="form-control" id="message" type="text" />
                         <button class="btn btn-primary" type="submit">
                             <img src="https://github.com/Yoonlang/web-programming/blob/master/html/assets/rightDirection2.png?raw=true" />
@@ -80,7 +76,7 @@
         <span>지도로 가기</span>
       </div>
     </a>
-    <a href="#">
+    <a href="/chatlist">
       <div class="fixedBox1">
         <span>채팅 목록</span>
       </div>
