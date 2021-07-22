@@ -31,7 +31,7 @@
   position: relative;
   align-items: center;
   justify-content: center;
-  width: 200px;
+  width: 400px;
   height: 100%;
 }
 .body_container .body_header .upper_header .left_header span {
@@ -121,12 +121,10 @@
   border-color: #ddd;
 }
 .user_container .user_img_container {
-  width: 200px;
-  height: 200px;
 }
 .user_container .user_img_container img {
-  width: 100%;
-  height: 100%;
+  width: 100px;
+  height: 100px;
   object-fit: fill;
 }
 .user_container .user_name {
@@ -158,9 +156,6 @@
   border: none;
   outline: none;
   margin-bottom: 10px;
-  border-bottom: solid;
-  border-color: #d02316;
-  border-width: 2px;
   color: #000;
   font-weight: 700;
   font-size: 18px;
@@ -199,7 +194,7 @@
 .modal_container .modal_box {
   display: block;
   width: 350px;
-  height: 400px;
+  min-height: 400px;
   background-color: #fafafa;
   border: solid;
   border-width: 1px;
@@ -208,8 +203,10 @@
   padding: 25px 30px 30px 30px;
 }
 .modal_container .modal_box .item_container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
   width: 100%;
-  height: calc(100% - 60px);
 }
 .modal_container .modal_box .item_container .item_span {
   font-weight: 600;
@@ -232,13 +229,16 @@
   width: calc(100% / 3);
   height: 30px;
 }
-.modal_container
-  .modal_box
-  .item_container
-  .select_item
-  .input_container
-  input {
-  margin-right: 10px;
+.modal_container .modal_box .item_container .select_item #like {
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+  border: none;
+  outline: none;
+  font-size: 25px;
+}
+.modal_container .modal_box .item_container .select_item #like::placeholder {
+  font-size: 25px;
 }
 .modal_container
   .modal_box
@@ -411,4 +411,105 @@
   font-size: 16px;
   font-weight: 600;
   color: #fff;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 500px) {
+  .body_container .body_header .upper_header {
+    height: 10vh;
+  }
+  .body_container .main_container {
+    min-height: 90vh;
+    height: 90vh;
+  }
+  .body_container .body_header .upper_header .left_header span {
+    font-size: 80px;
+  }
+  .fixedContainer .fixed {
+    width: 150px;
+    height: 150px;
+  }
+  #boxContainer .fixedBox {
+    bottom: 200px;
+    right: 30px;
+    width: 300px;
+    height: 100px;
+  }
+  #boxContainer .fixedBox1 {
+    bottom: 320px;
+    right: 30px;
+    width: 300px;
+    height: 100px;
+  }
+  #boxContainer .fixedBox2 {
+    bottom: 440px;
+    right: 30px;
+    width: 300px;
+    height: 100px;
+  }
+  #boxContainer span {
+    font-size: 55px;
+  }
+  .user_container {
+    min-height: 70%;
+  }
+  .user_container .user_img_container img {
+    width: 500px;
+    height: 500px;
+  }
+  .user_container .user_name {
+    text-align: center;
+    width: 100%;
+    margin: 50px 0px;
+  }
+  .user_container .user_name span {
+    color: #000;
+    font-size: 55px;
+    font-weight: 700;
+  }
+  .user_container .hashtag_container .hashtag {
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+  }
+  .main_container .update_btn {
+    margin-top: 50px;
+    width: 300px;
+    height: 100px;
+    outline: none;
+    background-color: #fff;
+    border-bottom: solid;
+    border-color: #d02316;
+    border-width: 2px;
+    border-radius: 30px;
+    font-size: 40px;
+    font-weight: 700;
+    transition: 0.4s;
+  }
+  .modal_container .modal_box {
+    width: 700px;
+    min-height: 700px;
+  }
+  .modal_container .modal_box .item_container .item_span {
+    font-size: 35px;
+  }
+  .modal_container .modal_box .item_container .select_item {
+    width: 100%;
+    height: 600px;
+  }
+  .modal_container .modal_box .btn_container {
+  }
+  .modal_container .modal_box .btn_container button {
+    width: 200px;
+    height: 80px;
+    border-radius: 40px;
+    background-color: #d02316;
+    outline: none;
+    border: none;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+  .modal_container .modal_box .btn_container button span {
+    color: #fafafa;
+    font-size: 20px;
+    font-weight: 600;
+  }
 }

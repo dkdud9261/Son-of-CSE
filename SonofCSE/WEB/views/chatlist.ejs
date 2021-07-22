@@ -1,0 +1,74 @@
+<html>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<head>
+    <meta charset="utf-8" />
+    <title>chatlist</title>
+    <link rel="stylesheet" href="/sonChatlist.css" type="text/css" />
+</head>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<body>
+    <div class="body_container">
+        <div class="body_header">
+            <div class="upper_header">
+                <div class="left_header">
+                    <span>채팅</span>
+                </div>
+            </div>
+        </div>
+        <div class="partner_container">
+            <div class="goods_container">
+                <div class="goods_left_box">
+                    <div class="text_area">
+                        <span class="upper_text">&nbsp;야생의 박재완</span>
+                    </div>
+                    <div class="text_area">
+                        <span class="mid_text">&nbsp;안녕하세요 ! 학헬이신가봐요 ? 같이 하체 하실래요 ?</span>
+                    </div>
+                </div>
+                <a href="/comitTalk">
+                    <div class="goods_right_box">
+                        <span>입장</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="fixedContainer" onclick="showFixed()">
+            <div class="fixed">
+              <img src="https://github.com/Yoonlang/web-programming/blob/master/html/assets/menu4.png?raw=true" />
+            </div>
+          </div>
+          <div id="boxContainer">
+            <a href="/comitFind">
+              <div class="fixedBox">
+                <span>지도로 가기</span>
+              </div>
+            </a>
+            <a href="#">
+              <div class="fixedBox1">
+                <span>채팅 목록</span>
+              </div>
+            </a>
+            <a href="/comitMyProfile">
+              <div class="fixedBox2">
+                <span>내 프로필</span>
+              </div>
+            </a>
+          </div>
+    </div>
+    <script>
+        const showFixed = () =>{
+            var box = document.getElementById("boxContainer");
+            if(box.style.display == "none"){
+                box.style.display = "flex";
+            }
+            else{
+                box.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

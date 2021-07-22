@@ -27,44 +27,63 @@ app.get('/', (req, res) => {
 	res.redirect('/login');
 });
 
-app.get('/test', (req, res)=> {
-	res.render('map');
-});
+var _id, nickname;
 
 app.get('/login', (req, res)=> {
 	res.render('login');
+});
+
+app.get('/chatlist', (req, res)=> {
+	res.render('chatlist');
 });
 
 app.get('/comitFind', async (req, res)=> {
 	const users = await User.find({});
 	res.render('comitFind', {users});
 });
-var nickname, image;
-app.get('/comitMyProfile', (req, res)=> {
-	res.render('comitMyProfile', {nickname, image});
-	console.log(nickname + " " + image);
+
+app.get('/comitMyProfile', async (req, res)=> {
+	const user = await User.findById(_id, (error, user) => {
+		console.log(error, user);
+	})
+	res.render('comitMyProfile', {user});
 });
 app.get('/comitProfile', async (req, res)=> {
 	const users = await User.find({});
 	res.render('comitProfile', {users});
 });
-app.get('/comitTalk', (req, res)=> {
-	res.render('comitTalk');
+app.get('/comitTalk', async (req, res)=> {
+	const user = await User.findById(_id, (error, user) => {
+		console.log(error, user);
+	})
+	res.render('comitTalk', {user});
 });
 
 app.post('/posts/store', async (req, res) => {
-	await User.create(req.body);
-	nickname = req.body.nickname;
-	image = req.body.image;
-	//console.log(nickname + " " + image);
+	await User.create(req.body, (error, user) => {
+		console.log(error, user);
+		_id = user._id;
+		nickname = user.nickname;
+	});
 	res.redirect('/comitFind');
 });
+
+app.post('/posts/edit', async (req, res) => {
+	await User.findByIdAndUpdate(_id, {
+		like: req.body.like
+	}, (error, user) => {
+		console.log(error, user)
+		like = req.body.like;
+		console.log("수정된 like : " + like);
+	})
+	res.redirect('/comitMyProfile');
+})
 
 var count=1; 
 // 채팅방에 접속했을 때 - 1
 io.on('connection', function(socket){
 	console.log('user connected: ', socket.id);
-	var name = "익명" + count++;
+	var name = nickname;
 	socket.name = name;
 	io.to(socket.id).emit('create name', name);
 	

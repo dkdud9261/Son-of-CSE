@@ -97,7 +97,7 @@
 }
 #map_canvas {
   width: 100%;
-  height: calc(100vh - 60px);
+  height: 100vh;
 }
 .fixedContainer {
   position: fixed;
@@ -160,4 +160,37 @@
   font-size: 16px;
   font-weight: 600;
   color: #fff;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 500px) {
+  #map_canvas {
+    height: 100vh;
+  }
+  .body_container .body_header .upper_header .left_header span {
+    font-size: 80px;
+  }
+  .fixedContainer .fixed {
+    width: 150px;
+    height: 150px;
+  }
+  #boxContainer .fixedBox {
+    bottom: 200px;
+    right: 30px;
+    width: 300px;
+    height: 100px;
+  }
+  #boxContainer .fixedBox1 {
+    bottom: 320px;
+    right: 30px;
+    width: 300px;
+    height: 100px;
+  }
+  #boxContainer .fixedBox2 {
+    bottom: 440px;
+    right: 30px;
+    width: 300px;
+    height: 100px;
+  }
+  #boxContainer span {
+    font-size: 55px;
+  }
 }

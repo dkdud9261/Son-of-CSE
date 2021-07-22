@@ -11,7 +11,7 @@
       <div class="body_header">
           <div class="upper_header">
               <div class="left_header">
-                  <span>컴잇</span>
+                  <span>내 프로필</span>
               </div>
           </div>
           <!--
@@ -46,15 +46,17 @@
       <div class="main_container">
         <div class="user_container">
           <div class="user_img_container">
-              <img src= <%= image %> />
+              <img src= <%= user.image %> />
           </div>
           <div class="user_name">
               <span>
-                  <%= nickname %>
+                  <%= user.nickname %>
                 </span>
           </div>
           <div class="hashtag_container">
-            <span class="hashtag">#애완동물</span>
+            <span class="hashtag">
+                    # <%= user.like %>
+            </span>
           </div>
         </div>
         <button class="update_btn" onclick="open_modal()">수정하기</button>
@@ -62,29 +64,20 @@
   </div>
   <div class="modal_container" id="modal_container">
       <div class="modal_box" id="modal_box">
+        <form action="/posts/edit" method="POST">
           <div class="item_container">
-              <span class="item_span">해시태그 선택</span>
+              <span class="item_span">관심사 입력</span>
               <div class="select_item">
-                  <div class="input_container"><input type="radio" /><span class="upper_text">애완동물</span></div>
-                  <div class="input_container"><input type="radio" /><span class="upper_text">카페</span></div>
-                  <div class="input_container"><input type="radio" /><span class="upper_text">독서</span></div>
-                  <div class="input_container"><input type="radio" /><span class="upper_text">운동</span></div>
-                  <div class="input_container"><input type="radio" /><span class="upper_text">방탈출</span></div>
-                  <div class="input_container"><input type="radio" /><span class="upper_text">게임</span></div>
-                  <div class="input_container"><input type="radio" /><span class="upper_text">알고리즘</span></div>
-                  <div class="input_container"><input type="radio" /><span class="upper_text">영화</span></div>
-                  <div class="input_container"><input type="radio" /><span class="upper_text">코딩</span></div>
-                  <div class="input_container"><input type="radio" /><span class="upper_text">패션</span></div>
-                  <div class="input_container"><input type="radio" /><span class="upper_text">노래</span></div>
-                  <div class="input_container"><input type="radio" /><span class="upper_text">SNS</span></div>
-              </div>
+                    <textarea name="like" id="like" cols="30" rows="10" placeholder="예) 코딩, 운동 등"></textarea>
+                </div>
           </div>
           <div class="btn_container">
-              <button   onclick="update_data()"><span>수정 완료</span></button>
+              <button  type="sumit"><span>수정 완료</span></button>
           </div>
           <div class="modal_cancel"   onclick="close_modal()">
               <img src="https://github.com/Yoonlang/web-programming/blob/master/html/assets/cancel.png?raw=true" />
           </div>
+        </form>
       </div>
   </div>
   <div class="fixedContainer" onclick="showFixed()">
