@@ -44,10 +44,10 @@
       <div class="main_container">
         <div class="user_container">
           <div class="user_img_container">
-              <img src="https://github.com/Yoonlang/web-programming/blob/master/html/assets/person.png?raw=true" />
+              <img src="" alt="" id="image">
           </div>
           <div class="user_name">
-              <span>홍길동</span>
+              <span id="nickname"></span>
           </div>
           <div class="hashtag_container">
             <span class="hashtag">#애완동물</span>
@@ -62,7 +62,45 @@
         </a>
       </div>
     </div>
+    <p id="users_len"> <%= users.length %></p>
+      <% for (var i = 0; i < users.length; i++) { %>
+        <p1> 
+          <%= users[i].nickname %>
+        </p1>
+        <p2> 
+          <%= users[i].image %>
+        </p2>
+        <p3>
+          <%= users[i].like %>
+        </p3>
+        <% } %>
   </body>
   <script>
+    var index;
+    if(localStorage.getItem('DBindex')) {
+      index = localStorage.getItem('DBindex');
+      console.log(index);
+    }
+    nicknames = $("p1").text().split('\n');
+    nicknames = nicknames.filter(function(s) {
+      return Number(s) != 0;
+    });
+    images = $("p2").text().split('\n');
+    images = images.filter(function(s) {
+      return Number(s) != 0;
+    });
+    likes = $("p3").text().split('\n');
+    likes = likes.filter(function(s) {
+      return Number(s) != 0;
+    });
+    $("#nickname").html(nicknames[index]);
+    $("#image").attr("src", images[index]);
+    $(document).ready(function() {
+      $("#user_len").hide();
+      $("p1").hide();
+      $("p2").hide();
+      $("p3").hide();
+    });
+    
   </script>
 </html>

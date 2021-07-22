@@ -9,7 +9,7 @@ var path = require('path');
 var fileUpload = require('express-fileupload');
 const mongoose = require('mongoose');
 const User = require('./models/User');
-const DBurl = require('./public/assets/keys');
+const DBurl = require('./public/javascripts/keys');
 
 mongoose.connect(DBurl, {useUnifiedTopology: true, useNewUrlParser:true});
 
@@ -39,27 +39,25 @@ app.get('/comitFind', async (req, res)=> {
 	const users = await User.find({});
 	res.render('comitFind', {users});
 });
+var nickname, image;
 app.get('/comitMyProfile', (req, res)=> {
-	res.render('comitMyProfile');
+	res.render('comitMyProfile', {nickname, image});
+	console.log(nickname + " " + image);
 });
-app.get('/comitProfile', (req, res)=> {
-	res.render('comitProfile');
+app.get('/comitProfile', async (req, res)=> {
+	const users = await User.find({});
+	res.render('comitProfile', {users});
 });
 app.get('/comitTalk', (req, res)=> {
 	res.render('comitTalk');
 });
 
-app.get('/monitor', async (req, res) => {
-	const users = await User.find({});
-	res.render('monitor', {
-		users
-	});
-	console.log("users.length : " + users.length);
-});
-
 app.post('/posts/store', async (req, res) => {
 	await User.create(req.body);
-	res.redirect('/monitor');
+	nickname = req.body.nickname;
+	image = req.body.image;
+	//console.log(nickname + " " + image);
+	res.redirect('/comitFind');
 });
 
 var count=1; 
