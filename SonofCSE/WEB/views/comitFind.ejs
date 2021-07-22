@@ -16,6 +16,7 @@
                   <span>컴잇</span>
               </div>
           </div>
+          <!--
           <div class="lower_header">
               <a href="#" target="_self">
                   <div class="menu" id="new_customer">
@@ -42,6 +43,7 @@
                   </div>
               </a>
           </div>
+          -->
       </div>
   </div>
   <div id="map_canvas">
@@ -53,9 +55,43 @@
         <p2> 
           <%= users[i].longitude %>
         </p2>
+        <p3>
+          <%= users[i].image %>
+        </p3>
         <% } %>
   </div>
+  <div class="fixedContainer" onclick="showFixed()">
+    <div class="fixed">
+      <img src="https://github.com/Yoonlang/web-programming/blob/master/html/assets/menu4.png?raw=true" />
+    </div>
+  </div>
+  <div id="boxContainer">
+    <a href="#">
+      <div class="fixedBox">
+        <span>지도로 가기</span>
+      </div>
+    </a>
+    <a href="/comitTalk">
+      <div class="fixedBox1">
+        <span>채팅 목록</span>
+      </div>
+    </a>
+    <a href="/comitMyProfile">
+      <div class="fixedBox2">
+        <span>내 프로필</span>
+      </div>
+    </a>
+  </div>
   <script type="text/javascript">
+    const showFixed = () =>{
+      var box = document.getElementById("boxContainer");
+      if(box.style.display == "none"){
+        box.style.display = "flex";
+      }
+      else{
+        box.style.display = "none";
+      }
+    }
     var nav = null;
     var map;
     var marker = new Object;
@@ -102,6 +138,12 @@
     longitudes = longitudes.filter(function(s) {
       return Number(s) != 0;
     });
+    images = $("p3").text().split('\n');
+    images = images.filter(function(s) {
+      return Number(s) != 0;
+    });
+   // for(var i = 0; i < users_len; i++) 
+   // console.log(images);
     var users_len = $("#users_len").text() * 1;
     //latitudes.push($("p1").text());
     //longitudes.push($("p2").text());
@@ -110,7 +152,7 @@
       /* 현재 위치의 위도와 경도 정보를 currentLocatioon 에 초기화 */
       var mapOptions = {
         center : {lat : latitude, lng : longitude}, /* 지도에 보여질 위치 */ 				
-        zoom : 14, /* 지도 줌 (0축소 ~ 18확대),  */ 	
+        zoom : 18, /* 지도 줌 (0축소 ~ 18확대),  */ 	
         mapTypeId : google.maps.MapTypeId.ROADMAP
       };
       /* DIV에 지도 달아주기 */
@@ -127,10 +169,17 @@
         console.log(users_len);
         marker = new google.maps.Marker({
           position: {lat: Number(latitudes[i]), lng : Number(longitudes[i])},
-          map : map
+          map,
+          icon: images[i]
         });
+        google.maps.event.addDomListener(marker, 'click', (function(marker, i) {
+          return function() {
+            localStorage.setItem('DBindex', i);
+            location.replace('/comitProfile');
+          }
+        })(marker, i))
         //console.log(latitudes);
-        console.log(Number(latitudes[i]) + " " + Number(longitudes[i]));
+        //console.log(Number(latitudes[i]) + " " + Number(longitudes[i]));
       }
       // marker = new google.maps.Marker({
       //   position : {lat: 35.8875136, lng: 128.6145696},
@@ -142,11 +191,9 @@
       // });
       // This event listener will call addMarker() when the map is clicked.
       /* 지도에서 마우스 클릭시 마커 생성 */
-      /*
-      google.maps.event.addListener(map, 'click', function(event) {
-        addMarker(event.latLng);
-      });
-      */
+      // google.maps.event.addListener(map, 'click', function(event) {
+      //   addMarker(event.latLng);
+      // });
     }
     // Add a marker to the map and push to the array.
     /*

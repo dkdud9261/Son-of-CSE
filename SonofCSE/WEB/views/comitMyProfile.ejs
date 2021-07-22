@@ -14,6 +14,7 @@
                   <span>컴잇</span>
               </div>
           </div>
+          <!--
           <div class="lower_header">
               <a href="/comitFind" target="_self">
                   <div class="menu" id="new_customer">
@@ -40,21 +41,20 @@
                   </div>
               </a>
           </div>
+          -->
       </div>
       <div class="main_container">
         <div class="user_container">
           <div class="user_img_container">
-              <img src="https://github.com/Yoonlang/web-programming/blob/master/html/assets/person.png?raw=true" />
+              <img src= <%= image %> />
           </div>
           <div class="user_name">
-              <span>홍길동</span>
+              <span>
+                  <%= nickname %>
+                </span>
           </div>
           <div class="hashtag_container">
             <span class="hashtag">#애완동물</span>
-            <span class="hashtag">#카페</span>
-            <span class="hashtag">#알고리즘</span>
-            <span class="hashtag">#영화</span>
-            <span class="hashtag">#방탈출</span>
           </div>
         </div>
         <button class="update_btn" onclick="open_modal()">수정하기</button>
@@ -87,8 +87,39 @@
           </div>
       </div>
   </div>
+  <div class="fixedContainer" onclick="showFixed()">
+    <div class="fixed">
+      <img src="https://github.com/Yoonlang/web-programming/blob/master/html/assets/menu4.png?raw=true" />
+    </div>
+  </div>
+  <div id="boxContainer">
+    <a href="/comitFind">
+      <div class="fixedBox">
+        <span>지도로 가기</span>
+      </div>
+    </a>
+    <a href="/comitTalk">
+      <div class="fixedBox1">
+        <span>채팅 목록</span>
+      </div>
+    </a>
+    <a href="#">
+      <div class="fixedBox2">
+        <span>내 프로필</span>
+      </div>
+    </a>
+  </div>
   </body>
   <script>
+    const showFixed = () =>{
+      var box = document.getElementById("boxContainer");
+      if(box.style.display == "none"){
+        box.style.display = "flex";
+      }
+      else{
+        box.style.display = "none";
+      }
+    }
     const open_modal = () => {
         var modal = document.getElementById("modal_container");
         modal.style.display = "flex"
