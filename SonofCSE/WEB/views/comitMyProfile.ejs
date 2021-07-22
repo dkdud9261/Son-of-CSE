@@ -60,18 +60,20 @@
   </div>
   <div class="modal_container" id="modal_container">
       <div class="modal_box" id="modal_box">
+        <form action="/posts/edit" method="POST">
           <div class="item_container">
               <span class="item_span">관심사 입력</span>
               <div class="select_item">
-                  <textarea name="like" id="like" cols="30" rows="10" placeholder="예) 코딩, 운동 등"></textarea>
-              </div>
+                    <textarea name="like" id="like" cols="30" rows="10" placeholder="예) 코딩, 운동 등"></textarea>
+                </div>
           </div>
           <div class="btn_container">
-              <button   onclick="update_data()"><span>수정 완료</span></button>
+              <button  type="sumit"><span>수정 완료</span></button>
           </div>
           <div class="modal_cancel"   onclick="close_modal()">
               <img src="https://github.com/Yoonlang/web-programming/blob/master/html/assets/cancel.png?raw=true" />
           </div>
+        </form>
       </div>
   </div>
   </body>

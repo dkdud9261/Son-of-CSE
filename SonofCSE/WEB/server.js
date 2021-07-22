@@ -31,6 +31,7 @@ app.get('/test', (req, res)=> {
 	res.render('map');
 });
 
+var nickname, image, _id;
 app.get('/login', (req, res)=> {
 	res.render('login');
 });
@@ -38,8 +39,9 @@ app.get('/login', (req, res)=> {
 app.get('/comitFind', async (req, res)=> {
 	const users = await User.find({});
 	res.render('comitFind', {users});
+	_id = users._id;
+	console.log(users._id);
 });
-var nickname, image;
 app.get('/comitMyProfile', (req, res)=> {
 	res.render('comitMyProfile', {nickname, image});
 	console.log(nickname + " " + image);
@@ -56,9 +58,16 @@ app.post('/posts/store', async (req, res) => {
 	await User.create(req.body);
 	nickname = req.body.nickname;
 	image = req.body.image;
-	//console.log(nickname + " " + image);
 	res.redirect('/comitFind');
 });
+
+app.post('/posts/edit', async (req, res) => {
+	await User.findByIdAndUpdate(_id, {
+		like: req.body.like
+	}, (error, user) => {
+		console.log(error, user)
+	})
+})
 
 var count=1; 
 // 채팅방에 접속했을 때 - 1
