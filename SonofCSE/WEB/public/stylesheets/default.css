@@ -82,7 +82,7 @@ input[type=button], input[type=submit], input[type=reset]{
 }
 
 .paging ul li:hover, .paging ul li.now_page{
-	background:#133555;
+	background:#d02316;
 	color:#fff;
 	font-weight:700;
 	cursor:pointer;
@@ -115,7 +115,7 @@ input[type=button], input[type=submit], input[type=reset]{
 
 .darkblue_btn{
 	padding:10px 20px;
-	background:#133555;
+	background:#d02316;
 	color:#fff;
 	font-weight:700;
 	font-size:14px;
@@ -142,7 +142,7 @@ input[type=button], input[type=submit], input[type=reset]{
 
 .darkblue_sbtn{
 	padding:5px 10px;
-	background:#133555;
+	background:#d02316;
 	color:#fff;
 	font-weight:700;
 	font-size:12px;
@@ -153,7 +153,7 @@ input[type=button], input[type=submit], input[type=reset]{
 	float:left;
 	width:100%;
 	margin-top:20px;
-	border-top:3px solid #133555;
+	border-top:3px solid #d02316;
 	border-left:1px solid #ddd;
 }
 
@@ -222,7 +222,7 @@ input[type=button], input[type=submit], input[type=reset]{
 }
 
 .default_table th{
-	background:#133555;
+	background:#d02316;
 	color:#fff;
 	font-weight:700;
 	font-size:14px;
@@ -261,7 +261,7 @@ table.default_table2:nth-child(even){
 }
 
 .default_table2 th{
-	background:#133555;
+	background:#d02316;
 	color:#fff;
 	font-weight:700;
 	font-size:14px;
@@ -339,7 +339,7 @@ table.default_table2:nth-child(even){
 }
 
 .default_table4 th{
-	background:#133555;
+	background:#d02316;
 	color:#fff;
 	font-weight:700;
 	font-size:14px;
@@ -405,10 +405,6 @@ table.default_table2:nth-child(even){
 .default_view_table th{
 	background:#efefef;
 	font-weight:700;
-}
-
-.default_view_table td{
-
 }
 
 

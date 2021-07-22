@@ -28,7 +28,7 @@ h2.join_h2{
 	width:380px;
 	height:300px;
 	margin-top:20px;
-	border:10px solid #133254;
+	border:10px solid #d02316;
 }
 
 .login_info{
@@ -75,7 +75,7 @@ h2.join_h2{
 .login_btn input[type=submit]{
 	width:300px;;
 	height:45px;
-	background:#133254;
+	background:#d02316;
 	color:#fff;
 	font-size:16px;
 	font-weight:700;
@@ -101,7 +101,7 @@ h2.join_h2{
 	float:left;
 	width:100%;
 	margin-top:10px;
-	border-top:3px solid #133555;
+	border-top:3px solid #d02316;
 }
 
 .join_box th, .join_box td{
@@ -207,7 +207,7 @@ h1.logo span.logo_h1_subtitle{
 }
 
 .gnb li:hover dl dt, .gnb li.over dl dt{
-	background:#133555;
+	background:#d02316;
 	color:#fff;
 	font-weight:700;
 }
@@ -297,7 +297,7 @@ h4.today_cnt span{
 	font-size:20px;
 	font-weight:700;
 	color:#fff;
-	background:#133555;
+	background:#d02316;
 
 }
 
@@ -307,7 +307,7 @@ h4.today_cnt span{
 	margin-top:20px;
 	font-size:18px;
 	font-weight:500;
-	color:#133555;
+	color:#d02316;
 }
 
 
@@ -418,7 +418,7 @@ h4.search_title{
 }
 
 .healthcare_tabs li.over{
-	background:#133555;
+	background:#d02316;
 	color:#fff;
 }
 .healthcare2{
