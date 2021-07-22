@@ -51,7 +51,6 @@ app.get('/comitMyProfile', async (req, res)=> {
 		console.log(user.nickname + " " + user.image + " / like : " + user.like);
 	})
 	res.render('comitMyProfile', {user});
-
 });
 app.get('/comitProfile', async (req, res)=> {
 	const users = await User.find({});
