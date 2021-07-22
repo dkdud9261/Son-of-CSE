@@ -9,7 +9,7 @@ var path = require('path');
 var fileUpload = require('express-fileupload');
 const mongoose = require('mongoose');
 const User = require('./models/User');
-const DBurl = require('./public/javascript/keys');
+const DBurl = require('./public/javascripts/keys');
 
 mongoose.connect(DBurl, {useUnifiedTopology: true, useNewUrlParser:true});
 
@@ -33,6 +33,10 @@ app.get('/test', (req, res)=> {
 
 app.get('/login', (req, res)=> {
 	res.render('login');
+});
+
+app.get('/chatlist', (req, res)=> {
+	res.render('chatlist');
 });
 
 app.get('/comitFind', async (req, res)=> {
