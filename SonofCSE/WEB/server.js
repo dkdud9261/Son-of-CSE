@@ -2,7 +2,7 @@
 
 var express = require('express');
 var app = new express();
-
+var cors = require('cors');
 var http = require('http').Server(app); 
 var io = require('socket.io')(http);    
 var path = require('path');
@@ -57,7 +57,6 @@ app.get('/monitor', async (req, res) => {
 	console.log("users.length : " + users.length);
 });
 
-
 app.post('/posts/store', async (req, res) => {
 	await User.create(req.body);
 	res.redirect('/monitor');
@@ -86,6 +85,6 @@ io.on('connection', function(socket){
 	
 });
 
-http.listen(4000, function(){ 
+app.listen(4000, function(){ 
 	console.log('server on..');
 });
