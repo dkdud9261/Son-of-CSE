@@ -117,7 +117,7 @@
       /* 현재 위치의 위도와 경도 정보를 currentLocatioon 에 초기화 */
       var mapOptions = {
         center : {lat : latitude, lng : longitude}, /* 지도에 보여질 위치 */ 				
-        zoom : 18, /* 지도 줌 (0축소 ~ 18확대),  */ 	
+        zoom : 14, /* 지도 줌 (0축소 ~ 18확대),  */ 	
         mapTypeId : google.maps.MapTypeId.ROADMAP
       };
       /* DIV에 지도 달아주기 */
@@ -131,11 +131,9 @@
       google.maps.event.addListener(marker, 'click', toggleBounce(marker));
       
       for(var i = 0; i < users_len; i++) {
-        console.log(users_len);
         marker = new google.maps.Marker({
           position: {lat: Number(latitudes[i]), lng : Number(longitudes[i])},
-          map,
-          icon: images[i]
+          map
         });
         google.maps.event.addDomListener(marker, 'click', (function(marker, i) {
           return function() {

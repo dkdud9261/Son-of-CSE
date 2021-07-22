@@ -115,7 +115,7 @@ tbody {
 tr {
   display: flex;
   position: relative;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   width: 80%;
@@ -126,6 +126,7 @@ td {
   position: relative;
   flex-direction: column;
   justify-content: center;
+  width: 50%;
 }
 .button {
   margin-top: 20px;
@@ -151,7 +152,7 @@ h3 {
   position: relative;
   justify-content: left;
   align-items: center;
-  width: 300px;
+  width: 50%;
   overflow: hidden;
 }
 #label #labelText {
@@ -160,6 +161,7 @@ h3 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 300px;
 }
 #label .imgLabel {
   margin-top: 22px;
