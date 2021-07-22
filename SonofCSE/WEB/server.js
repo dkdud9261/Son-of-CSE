@@ -9,7 +9,7 @@ var path = require('path');
 var fileUpload = require('express-fileupload');
 const mongoose = require('mongoose');
 const User = require('./models/User');
-const DBurl = require('./public/assets/keys');
+const DBurl = require('./public/javascript/keys');
 
 mongoose.connect(DBurl, {useUnifiedTopology: true, useNewUrlParser:true});
 
@@ -59,7 +59,7 @@ app.get('/monitor', async (req, res) => {
 
 app.post('/posts/store', async (req, res) => {
 	await User.create(req.body);
-	res.redirect('/monitor');
+	res.redirect('/comitFind');
 });
 
 var count=1; 
