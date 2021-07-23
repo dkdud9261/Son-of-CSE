@@ -53,7 +53,7 @@ app.get('/comitProfile', async (req, res)=> {
 	res.render('comitProfile', {users});
 });
 app.get('/comitTalk', async (req, res)=> {
-	const user = await User.findById(_id, (error, user) => {
+	const user = await User.findById(_id, (error, user) => { //접속한 사람
 		console.log(error, user);
 	})
 	res.render('comitTalk', {user});
@@ -87,8 +87,8 @@ app.get('/admin/popup', async (req, res) => {
 app.post('/posts/store', async (req, res) => {
 	await User.create(req.body, (error, user) => {
 		console.log(error, user);
-		_id = user._id;
-		nickname = user.nickname;
+		_id = user._id; //접속한 사람
+		nickname = user.nickname; //접속한 사람
 	});
 	res.redirect('/comitFind');
 });

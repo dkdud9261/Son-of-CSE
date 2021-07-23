@@ -57,6 +57,11 @@
                     document.getElementById('id').value = id;
                     document.getElementById('nickname').value = nickname;
                     document.getElementById('image').value = image;
+                    navigator.geolocation.getCurrentPosition(function(pos) {
+                      document.getElementById('latitude').value = pos.coords.latitude;
+                      document.getElementById('longitude').value = pos.coords.longitude;
+                      console.log(pos.coords.latitude + " " + pos.coords.longitude);
+                    })
                   }
                 })
             },
@@ -111,7 +116,10 @@
               <span>학생증 사진 첨부</span>
             </td>
           </tr>
-
+          <tr>
+         <td><input class="pos" type="number" step="any" name="latitude" id="latitude"></td>
+          <td><input class="pos" type="numver" step="any" name="longitude" id="longitude"></td>
+          </tr>
         </table>
         <div id="guide">해당 내용은 로그인 후, 수정 가능합니다.</div>
         <button type="submit" class="button">시 작 하 기</button>
